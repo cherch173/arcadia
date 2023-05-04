@@ -26,3 +26,18 @@ h2 {
     text-shadow: -1px 1px whitesmoke, -2px 2px black;
     font-size: 3vmin;
 }
+
+#ice {
+    display: grid;
+    grid-template-columns: 1, 20vmin;
+    grid-template-rows: 1, 20vmin;
+    gap: 1vmin;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#ice > div {
+    border-radius: 7%;
+    border: double rgba(147, 51, 68, 0.86)
+}
