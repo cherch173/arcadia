@@ -28,10 +28,7 @@
 
 The idea is to incorporate everything about Air Hockey into a browser-based game.
 
-Using **divs**, **classes**, **IDs** and **CSS Flexbox** we can construct a facsimile Ice Rink, Sticks, a puck, two Goals, and even blue and red lines.
-
-Every game needs a theme though (to help it stand out) and so I thought I would draw inspiration from Seasons 2 and 3 of Letterkenny and feature a few cast members as playable characters.
-
+Using **divs** and assigning them different **Classes**, **IDs** and **CSS Flexbox** we can construct a facsimile Ice Rink, Sticks, a puck, two Goals, and even blue and red lines. and get several divs to move within one another and recognize boundary.
 
 #### _**STICKS**_ 
 
@@ -76,16 +73,15 @@ Then, a message will display declaring the winner and a PLAY AGAIN button will a
 ***
 
 ### **WIREFRAME**
-this is where we put the wireframe to pitch the layout
+To effectively build this we'll be utilizing DIVS and SPANS to create shapes and the assigning them Classes and IDs to assign them different property values.
 
-There's gonna be text.
+![Image](https://whimsical.com/2146a57f-e09f-41c2-93d9-ab452c3173c7)
 
-There's gonna be an [Image] of the WIREFRAME.
+Then, using gap we'll make sure they can't contact one another without invoking a reaction.
 
-Then there's gonna be more text.
 ***
 
-#### **Stick Tape?**
+#### **STICK TAPE?**
 ![Image](https://gifs.knuth.me/letterkenny/you_dont_need_it.gif)
 ***
 ***
