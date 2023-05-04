@@ -1,0 +1,13 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+    background-color: whitesmoke;
+}
+
+header {
+    font-size: 6vmin;
+    color: crimson;
+    text-shadow: -1.5px 1.5px whitesmoke, -3px 3px black;
+}
