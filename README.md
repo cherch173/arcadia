@@ -58,14 +58,21 @@ Luckily you only know HTML, CSS and JavaScript so that's what we're gonna say he
 ### _**Getting Started**_
        
 ![Image](https://media4.giphy.com/media/25aH5q5MlW3XgpiX3v/giphy.gif?cid=6c09b952e039ebfaf587f81ce4bd459cc6f4406566bdf4dc&rid=giphy.gif&ct=g)
-To begin the project: I'll start by using a general grey background and begin constructing the Ice Rink (aka the Board) as Divs to ensure functionality before aesthetics.
 
-Then, I'll get fancy.
+To begin select the FACE OFF Button which will start a timer of 3 seconds.
 
-Then we play hockey.
+The game will initialize and Player1 (The Red Stick)'s controller will become active and can be used via the Keyboard Arrows.
+
+The puck will move upon contact and bounce of the parameters of the grid I build out of Divs to emulate boards.
+
+The game will run for a facsimile period elapsing a time
+limit of 2 minutes.
+
+After two minutes we'll calculate the Total Goals Scored by Player1 and Player2 and the PLAYER with the highest total will be rendered the winner.
+
+Then, a message will display declaring the winner and a PLAY AGAIN button will appear allowing the USER/PLAYER to reset the score and PLAY AGAIN using the FACE OFF Button when ready.
+
 ***
-
-
 ***
 
 ### **WIREFRAME**
@@ -113,13 +120,13 @@ Then there's gonna be more text.
 - [ ] Ensure Functionality
 - [ ] Glam up all **AESTHETICS** using CSS
 
-
-
+![Image](https://media.tenor.com/ciShAY-mXXkAAAAC/wonderous-letterkenny.gif)
+***
 ***
 ### _**Credits**_
 ##### Fisky Gif: [Giphy](https://media2.giphy.com/media/VgBk8EZQILIaPIJymY/giphy.gif)
 ##### Shoresy Drumstick Gif: [Tenor](https://media.tenor.com/kD3R5YQkmVgAAAAd/shoresy-sticks.gif0)
-##### Stewart Gif: [link]()
-##### Eric B. & Rakim Gif: [Pinterest](hhttps://i.pinimg.com/originals/8a/29/da/8a29da8f21c0ae6ba27844657a02423c.gif)
+##### Coach Laughing Gif: [Giphy](https://media4.giphy.com/media/25aH5q5MlW3XgpiX3v/giphy.gif?cid=6c09b952e039ebfaf587f81ce4bd459cc6f4406566bdf4dc&rid=giphy.gif&ct=g)
 ##### Reilly & Jonesy Technique Gif:  [Tenor](https://media.tenor.com/Ou43IQbE6YMAAAAd/letterkenny-jonesy-and-shorsey.gif) 
 ##### Coach Gif: [Reddit r/Letterkenny](https://gifs.knuth.me/letterkenny/you_dont_need_it.gif)
+##### Stewart Gif: [Tenor](https://media.tenor.com/ciShAY-mXXkAAAAC/wonderous-letterkenny.gif)

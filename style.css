@@ -3,11 +3,26 @@
 }
 
 body {
+    height: 100vh;
+    display: flexbox;
+    font-family: 'Russo One', sans-serif;
     background-color: whitesmoke;
+
 }
 
 header {
+    justify-content: center;
+    text-align: center;
     font-size: 6vmin;
-    color: crimson;
-    text-shadow: -1.5px 1.5px whitesmoke, -3px 3px black;
+    color: rgba(220, 20, 60, .86);
+    text-shadow: -1px 1px whitesmoke, -2px 2px black;
+}
+
+h2 {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: rgba(147, 51, 68, 0.86);
+    text-shadow: -1px 1px whitesmoke, -2px 2px black;
+    font-size: 3vmin;
 }
