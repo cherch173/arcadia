@@ -13,22 +13,29 @@ const playerColor = {
     'null': transparent,
 }
 
+// Then, we'll declare our CONTROLLERS/STICKS in an empty ARRAY //
+
+const controllers = []
+
 
 ////////////////////////////////////////////////
 /*----- app's STATE (Variables) aka lets -----*/
 
 // Well, its hockey. So, we'll need a game board (the ICE), a scoreboard that updates at each goal per player, a winner, and a score (tally) for each player
 
-let board, score, goal, winner;
+let board, score, winner;
 let playerOneScore;
+let playerTwoScore;
 
+// Goals, however. Goals seem like they would be an EVENT LISTENER somehow inside a LET
 
+let goal = // maybe make them span classes in the border of the ICE? Can you do that? I feel like we can instead of building a new div within a div within a div within a div (oyyyy)
 
 /////////////////////////////////////////
 /*----- cached ELEMENT references -----*/
 
 // Next, we'll select H2 to be the theatre that displays a message delcaring who's TURN IT IS or WHO THE WINNER is //
-const message = document.querySelector('h2');
+let message  = document.querySelector('h2')
 
 // Then, we'll declare our FACE OFF button at the top
 const faceOffBtn = document.querySelector('faceOffBtn')
@@ -99,23 +106,30 @@ render();
 
 
 //// Step FOUR -- Introduce WINNING LOGIC ////
+/// a For If seems like it'd work here //
 
 function getWinner() {
-
+    
 }
 
 
-///// Step FIVE -- Visualize all STATE and INFO inthe DOM
+///// Step FIVE -- the RENDER function! Visualize all STATE and INFO inthe DOM
+
 function render() {
     renderBoard();
     renderMessage();
-    // HIDE or SHOW the PLAY AGAIN BUTTON //
+
+
+// Next, we want to HIDE or SHOW the PLAY AGAIN BUTTON based on if there's a WINNER determined//
     playAgainBtn.disabled = !winner;
 }
 
 
 /// RENDER THE BOARD aka the ICE RINK!  /////
+// in class we used forEach callback functions and literals too. 
+function renderBoard () {
 
+}
 
 
 ///// RENDER SCORE /////

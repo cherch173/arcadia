@@ -43,8 +43,11 @@ h2 {
 }
 
 #faceOffButton:hover {
-    background-color: rgba(239, 90, 90, 0.86);
+    background-color: rgba(173, 106, 106, 0.86);
     color: bisque;
+    transform: scale(1.11);
+    transition: transform 142ms ease-in;
+    border-color: rgba(48, 19, 19, 0.73)
 }
 
 /* Making The Ice look like the Ice */
@@ -94,8 +97,11 @@ h2 {
 }
 
 #playAgainButton:hover {
-    background-color: rgba(239, 90, 90, 0.86);
+    background-color: rgba(173, 106, 106, 0.86);
     color: bisque;
+    transform: scale(1.11);
+    transition: transform 142ms ease-in;
+    border-color: rgba(48, 19, 19, 0.73)
 }
 
 /* //// MEDIA QUERY FOR TABLET //// */
