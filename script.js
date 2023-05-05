@@ -40,7 +40,7 @@ let goal // maybe make them span classes in the border of the ICE? Can you do th
 /*----- cached ELEMENT references -----*/
 
 // Next, we'll select H2 to be the theatre that displays a message delcaring who's TURN IT IS or WHO THE WINNER is //
-let message  = document.getElementById('h2')
+let message  = document.getElementById('h3')
 
 // Then, we'll declare our FACE OFF button at the top
 const faceOffBtn = document.querySelector('faceOffBtn')

@@ -20,9 +20,10 @@ header {
     font-size: 6vmin;
     color: rgba(220, 20, 60, .86);
     text-shadow: -1px 1px whitesmoke, -2px 2px black;
+    margin-top: 50px;
 }
 
-h2 {
+h3 {
     text-align: center;
     color: rgba(147, 51, 68, 0.86);
     text-shadow: -1px 1px whitesmoke, -2px 2px black;
