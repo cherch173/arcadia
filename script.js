@@ -9,7 +9,7 @@
 // First, we'll assign COLORS to PLAYER VALUE of 1 and -1 for our STICKS and TRANSPARENT for null
 const playerColor = {
     '1': rgba(245, 245, 173, 0.86),
-    '1': rgba(0, 0, 0, 0.86),
+    '-1': rgba(0, 0, 0, 0.86),
     'null': transparent,
 }
 
@@ -118,6 +118,7 @@ function getWinner() {
 
 function render() {
     renderBoard();
+    renderScore();
     renderMessage();
 
 

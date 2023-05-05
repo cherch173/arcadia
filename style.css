@@ -11,6 +11,8 @@ body {
     justify-content: center;
     align-items: center;
     font-family: 'Russo One', sans-serif;
+    background-image: url('https://media.tenor.com/IrfZ5LGhnckAAAAC/letterkenny-boomtown.gif');
+    background-size: cover;
     background-color: rgba(0, 0, 0, 0.86);
 
 }
