@@ -70,18 +70,18 @@ h2 {
 }
 
 #stickOne {
-    display: flex;
-    height: 10vmin;
-    width: 10vmin;
+    display: inline-flex;
+    height: 14vmin;
+    width: 14vmin;
     background-color: crimson;
     border-radius: 50%;
-    border: .25vmin solid firebrick;
+    border: .25vmin solid rgba(178, 34, 34, .86);
 }
 
 #stickTwo {
-    display: flex;
-    height: 10vmin;
-    width: 10min;
+    display: inline-flex;
+    height: 14vmin;
+    width: 14vmin;
     background-color: dodgerblue;
     border-radius: 50%;
     border: .25vmin solid rgba(0,0,173, 0.86);
@@ -92,8 +92,8 @@ h2 {
 #puck {
     display: flex;
     grid-template-columns: repeat(1, 5vmin);
-    height: 7vmin;
-    width: 7vmin;
+    height: 8vmin;
+    width: 8vmin;
     border: 6px solid black;
     border-radius: 50%;
     background-color: black;
@@ -126,7 +126,7 @@ h2 {
 
 @media (min-width: 768px) {
     * {
-        color: rgba(220, 20, 60, .86);
+        color: rgba(194, 29, 62, 0.86);
         text-shadow: -1px 1px rgba(245, 245, 245, 1), -2px 2px black;
         font-size: 20px;
     }
