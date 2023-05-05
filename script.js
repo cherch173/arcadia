@@ -15,7 +15,7 @@ const playerColor = {
 
 // Then, we'll declare our CONTROLLERS/STICKS in an empty ARRAY //
 
-const controllers = []
+const sticks = []
 
 
 ////////////////////////////////////////////////
@@ -113,6 +113,7 @@ function getWinner() {
 }
 
 
+
 ///// Step FIVE -- the RENDER function! Visualize all STATE and INFO inthe DOM
 
 function render() {
@@ -131,6 +132,12 @@ function renderBoard () {
 
 }
 
+
+/// Now we have to program the Keyboard Controls to move your STICK //
+function moveController() {
+
+
+}
 
 ///// RENDER SCORE /////
 function renderScore() {
