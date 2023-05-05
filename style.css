@@ -1,18 +1,21 @@
 * {
+    margin: 0;
 	box-sizing: border-box;
 }
 
 body {
     height: 100vh;
     width: 100vw;
-    display: flexbox;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     font-family: 'Russo One', sans-serif;
     background-color: rgba(0, 0, 0, 0.86);
-
+   
 }
 
 header {
-    justify-content: center;
     text-align: center;
     font-size: 6vmin;
     color: rgba(220, 20, 60, .86);
@@ -21,22 +24,29 @@ header {
 
 h2 {
     text-align: center;
-    justify-content: center;
-    align-items: center;
     color: rgba(147, 51, 68, 0.86);
     text-shadow: -1px 1px whitesmoke, -2px 2px black;
     font-size: 3vmin;
+    margin-bottom: 5px;
 }
 
-#rink {
+#faceOffButton {
+    background-color: rgba(0, 0, 0, 0.73);
+    color: whitesmoke;
+    text-shadow: -1px 1px rgba(220, 20, 60, .86), -2px 2px rgba(147, 51, 68, 0.86);
+    border: 4px double rgba(245, 245, 245, 0.73);
+    justify-content: center;
+    border-radius: 10%;
+}
+
+#ice {
     display: grid;
-    grid-template-columns: repeat(1, 50vmin);
-    grid-template-rows: repeat(2, 30vmin);
+    grid-template-columns: repeat(10, 8vmin);
+    grid-template-rows: repeat(5, 10vmin);
     gap: 1vmin;
     justify-content: center;
     align-items: center;
-    flex-wrap: inherit;
-    margin: 30px 30px 15px 30px;
+    margin: 30px 20px 30px 20px;
     border-radius: 17.3%;
     border: 10px double rgba(147, 51, 68, 0.86);
     background-color:  rgba(246, 247, 255, .86);
@@ -45,19 +55,32 @@ h2 {
 #puck {
     display: flex;
     grid-template-columns: repeat(1, 5vmin);
-    height: 8vmin;
-    width: 8vmin;
+    height: 7vmin;
+    width: 7vmin;
     border: 6px solid black;
     border-radius: 50%;
     background-color: black;
+    top: calc(50% - 15px);
+    left: calc(50% - 15%);
 }
 
+#puck
 
-#button {
+
+#playAgainButton {
     background-color:rgba(172, 53, 77, 0.86);
-    border: 6px double rgba(147, 51, 68, 0.86);
-    border-radius: 3%;
+    border: 4px double rgba(245, 245, 245, 0.73); 
+    border-radius: 10%;
     font-family: 'Russo One', sans-serif;
     color: whitesmoke;
+    margin-bottom: 60px;
+    max-width: 25%;
 }
 
+    @media (min-width: 768px) {
+        * {
+            color: rgba(220, 20, 60, .86);
+            text-shadow: -1px 1px rgba(245, 245, 245, 1), -2px 2px black;
+            font-size: 20px;
+        }
+    }

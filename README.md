@@ -62,12 +62,9 @@ The game will initialize and Player1 (The Red Stick)'s controller will become ac
 
 The puck will move upon contact and bounce of the parameters of the grid I build out of Divs to emulate boards.
 
-The game will run for a facsimile period elapsing a time
-limit of 2 minutes.
+The game will run for a facsimile period elapsing when one player **scores 5 goals**. Aka first to 5 goals = winner, winner chicken dinner...
 
-After two minutes we'll calculate the Total Goals Scored by Player1 and Player2 and the PLAYER with the highest total will be rendered the winner.
-
-Then, a message will display declaring the winner and a PLAY AGAIN button will appear allowing the USER/PLAYER to reset the score and PLAY AGAIN using the FACE OFF Button when ready.
+Then, a **message** will display declaring the winner and a PLAY AGAIN button will appear allowing the USER/PLAYER to reset the score and PLAY AGAIN using the FACE OFF Button when ready.
 
 ***
 ***
