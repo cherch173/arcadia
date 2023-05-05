@@ -29,7 +29,7 @@ let playerTwoScore;
 
 // Goals, however. Goals seem like they would be an EVENT LISTENER somehow inside a LET
 
-let goal = // maybe make them span classes in the border of the ICE? Can you do that? I feel like we can instead of building a new div within a div within a div within a div (oyyyy)
+let goal // maybe make them span classes in the border of the ICE? Can you do that? I feel like we can instead of building a new div within a div within a div within a div (oyyyy)
 
 /////////////////////////////////////////
 /*----- cached ELEMENT references -----*/
