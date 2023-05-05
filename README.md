@@ -72,7 +72,7 @@ Then, a **message** will display declaring the winner and a PLAY AGAIN button wi
 ### **WIREFRAME**
 To effectively build this we'll be utilizing DIVS and SPANS to create shapes and the assigning them Classes and IDs to assign them different property values.
 
-![game wireframe](https://whimsical.com/boomtown-T5t7B1Ux8dVQf3hkpJybb2)
+![Image](https://github.com/cherch173/arcadia/blob/main/wireframe_boomtown.png?raw=true)
 
 Then, using gap we'll make sure they can't contact one another without invoking a reaction.
 
