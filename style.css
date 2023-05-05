@@ -54,8 +54,8 @@ h2 {
 
 #ice {
     display: grid;
-    grid-template-columns: repeat(10, 8vmin);
-    grid-template-rows: repeat(5, 10vmin);
+    grid-template-columns: repeat(11, 8vmin);
+    grid-template-rows: repeat(3, 16vmin);
     gap: 1vmin;
     justify-content: center;
     align-items: center;
@@ -69,13 +69,31 @@ h2 {
     cursor: pointer;
 }
 
+#stickOne {
+    display: flex;
+    height: 10vmin;
+    width: 10vmin;
+    background-color: crimson;
+    border-radius: 50%;
+    border: .25vmin solid firebrick;
+}
+
+#stickTwo {
+    display: flex;
+    height: 10vmin;
+    width: 10min;
+    background-color: dodgerblue;
+    border-radius: 50%;
+    border: .25vmin solid rgba(0,0,173, 0.86);
+}
+
 /* The Puck  */
 
 #puck {
     display: flex;
     grid-template-columns: repeat(1, 5vmin);
-    height: 6.66vmin;
-    width: 6.66vmin;
+    height: 7vmin;
+    width: 7vmin;
     border: 6px solid black;
     border-radius: 50%;
     background-color: black;
@@ -99,7 +117,7 @@ h2 {
 #playAgainButton:hover {
     background-color: rgba(173, 106, 106, 0.86);
     color: bisque;
-    transform: scale(1.11);
+    transform: scale(1.13);
     transition: transform 142ms ease-in;
     border-color: rgba(48, 19, 19, 0.73)
 }

@@ -8,14 +8,17 @@
 
 // First, we'll assign COLORS to PLAYER VALUE of 1 and -1 for our STICKS and TRANSPARENT for null
 const playerColor = {
-    '1': rgba(245, 245, 173, 0.86),
-    '-1': rgba(0, 0, 0, 0.86),
-    'null': transparent,
+    '1': 'rgba(245, 245, 173, 0.86)',
+    '-1': 'rgba(30, 154, 255, 0.86)',
+    'null': 'transparent',
 }
 
 // Then, we'll declare our CONTROLLERS/STICKS in an empty ARRAY //
 
 const sticks = []
+
+
+
 
 
 ////////////////////////////////////////////////
@@ -31,6 +34,8 @@ let playerTwoScore;
 
 let goal // maybe make them span classes in the border of the ICE? Can you do that? I feel like we can instead of building a new div within a div within a div within a div (oyyyy)
 
+
+
 /////////////////////////////////////////
 /*----- cached ELEMENT references -----*/
 
@@ -45,17 +50,22 @@ const playAgainBtn = document.querySelector('playAgainButton')
 
 
 
+
+
 ///////////////////////////////
 /*----- EVENT LISTENERS -----*/
 
 // Next, we add an Event Listener to the BOARD 
 document.getElementById('ice').addEventListener('click', handleMove);
 
-// Next, we add an Event Listener to activate out FACE OFF 
+// Next, we add an Event Listener to activate our FACE OFF feature
 faceOffBtn.addEventListener('click', initialize);
 
 // Then we add an Event Listener to activate our PLAY AGAIN BUTTON
 playAgainBtn.addEventListener('click', initialize);
+
+
+
 
 
 
@@ -157,19 +167,24 @@ function renderScore() {
 
 
 
-////// WINNING MESSAGE & TURN MESSAGE //////
+////// WINNING MESSAGE & LEAD MESSAGE //////
 function renderMessage() {
     if (winner === 'T') {
-
+        message.innerHTML = `a TIE? What's the matter, <span style="font-size: 4.5vmin"><span style="color: whitesmoke"> BOOMTOWN? </span></span> Did somebody's little sister eat their last <span style="font-size: 4.5vmin"><span style="color: orange"> Halloween Oreo </span></span> ?`
     }
     else if (winner >= '1') {
-
+        message.innerHTML =`Wheel, snipe, celly boys! The <span style="font-size: 4.5vmin"><span style="color: whitesmoke"> LETTERKENNY IRISH </span></span> get the W.`
     }
     else if (winner <= '-1') {
-
+        message.innerHTML = `JJ Frankie JJ scores! And the <span style="font-size: 4.5vmin"><span style="color: dodgerblue"> THREE RIVERS LAKERS </span><span> bag the win. <br> It's <span style="font-size: 4.5vmin"><span style="color: dodgerblue"> F%^&$!@ </span> EMBARASSING! </span></br>`
+    }
+    else if (score >= '1') {
+        message.innerHTML = `Ferda. The <span style="font-size: 4.5vmin"><span style="color: whitesmoke"> LETTERKENNY IRISH</span></span> are in the lead`;
+    }
+    else if (score <= '-1') {
+        message.innerHTML = `The <span style="font-size: 4.5vmin"><span style="color: dodgerblue"> THREE RIVERS LAKERS</span></span> have taken the lead`
     }
     else {
-
+        message.innerText = 'Nice stats, no stats.'
     }
-    return message
 }
