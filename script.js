@@ -1,17 +1,18 @@
 ///// WELCOME to the First Chapter of Cherch Games: BOOMTOWN (A Letterkenny Themed Air Hockey Experience) /////
 
 
-
-
 //////////////////////////
 /*----- CONSTANTS -----*/
 
 // First, we'll assign COLORS to PLAYER VALUE of 1 and -1 for our STICKS and TRANSPARENT for null
-const playerColor = {
+const playerMsgColor = {
     '1': 'rgba(245, 245, 173, 0.86)',
     '-1': 'rgba(30, 154, 255, 0.86)',
     'null': 'transparent',
 }
+
+
+
 
 // Then, we'll declare our CONTROLLERS/STICKS in an empty ARRAY //
 
@@ -21,19 +22,35 @@ const sticks = []
 
 
 
+// Then, some sweet, sweet theme music //
+
+const AUDIO = new Audio('')
+
+
+
 ////////////////////////////////////////////////
 /*----- app's STATE (Variables) aka lets -----*/
 
-// Well, its hockey. So, we'll need a game board (the ICE), a scoreboard that updates at each goal per player, a winner, and a score (tally) for each player
+// First, we begin with the scoring logic using a let SCORES OBJECT to store our game's SCORE //
+// The OBJECT KEY of 'p' will be PLAYER, 'c' will be COMPUTER, 't' will be tie
 
-let board, score, winner;
-let playerOneScore;
-let playerTwoScore;
+let scores
 
-// Goals, however. Goals seem like they would be an EVENT LISTENER somehow inside a LET
+// Then we'll declare a let RESULTS OBJECT to store the OUTCOMES //
+// The OBJECT KEY of 'p' will be PLAYER, 'c' will be COMPUTER, 't' will be tie
+// The OBJECT VALUES of 'L' will equal LETTERKENNY and and 'Z' for THREE RIVERS LAKERS
+let results
+
+// Then we declare a let WINNER STRING of 'p' if PLAYER wins, 'c' if COMPUTER wins and 't' if its a TIE
+let winner; 
+
+// Yaso, its hockey so we'll need a game board (the ICE), a scoreboard that updates at each goal per player, a winner, and a score (tally) for each player
+
+let board;
+
+// Goals! Goals seem like they would be an EVENT LISTENER somehow inside a LET
 
 let goal // maybe make them span classes in the border of the ICE? Can you do that? I feel like we can instead of building a new div within a div within a div within a div (oyyyy)
-
 
 
 /////////////////////////////////////////
@@ -72,7 +89,36 @@ playAgainBtn.addEventListener('click', initialize);
 /////////////////////////
 /*----- FUNCTIONS -----*/
 
-// First we need to activate our borders so the puck bounces off the BORDER of the ICE <div>
+
+// FIRST AND FOREMOST WE INITIALIZE OUR OBJECTS //
+init ();
+// Initialize all STATE then call render();
+function init () {
+    scores = {
+        p: 0,
+        t: 0,
+        c: 0,
+    }
+    results = {
+        p: '',
+        c: ''
+    }
+    winner = 't'
+    render();
+}
+
+function render() {
+    
+}
+
+
+// SECOND -- Update all impacted STATE (handleMove(evt) etc etc) and then call RENDER
+
+
+
+
+
+// Then we need to activate our borders so the puck bounces off the BORDER of the ICE <div>
 
 // Then, We need to emulate PUCK movement and determine a max speed //
 
@@ -93,15 +139,6 @@ playAgainBtn.addEventListener('click', initialize);
 
 //// I want to make my mouse cursor the PLAYER ONE STICK but it's also 3am and I'd love to ask you guys how to modify a cursor for the purpose of game design ////
 
-
-
-// Step ONE -- Init all STATE VARIABLES then call RENDER //
-init();
-
-function init() {
-
-    render();
-}
 
 
 // Step TWO -- Update all impacted STATE (handleMove(evt) etc etc) and then call RENDER
