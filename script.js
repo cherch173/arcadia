@@ -100,23 +100,73 @@ function init () {
         c: 0,
     }
     results = {
-        p: '',
-        c: ''
+        p: 'L',
+        c: 'L'
     }
     winner = 't'
     render();
 }
 
-function render() {
-    
+// Now we write out a function to RENDER the SCORE
+function renderScores() {
+    //use a for loop to iterate//
+    for (let key in scores) {
+        const scoreElement = document.getElementById(`${key}-score`);
+        scoreElement.innerText = scores[key  ];
+    }
 }
 
+function renderResults () {
 
-// SECOND -- Update all impacted STATE (handleMove(evt) etc etc) and then call RENDER
+}
 
+// ^^^ *SECOND* we invoke what we RENDER in the RENDER FUNCTION 
 
+// *FIRST* we need our RENDER FUNCTION to give a HUB to all RENDERING //
 
+function render() {
+    renderScores();
+    renderResults();
+}
 
+////// WINNING MESSAGE & LEAD MESSAGE //////
+function renderMessage() {
+    if (winner === 'T') {
+        message.innerHTML = `a TIE? What's the matter, <span style="font-size: 4.5vmin"><span style="color: whitesmoke"> BOOMTOWN? </span></span> Did somebody's little sister eat their last <span style="font-size: 4.5vmin"><span style="color: orange"> Halloween Oreo </span></span> ?`
+    }
+    else if (winner >= '1') {
+        message.innerHTML =`Wheel, snipe, celly boys! The <span style="font-size: 4.5vmin"><span style="color: whitesmoke"> LETTERKENNY IRISH </span></span> get the W.`
+    }
+    else if (winner <= '-1') {
+        message.innerHTML = `JJ Frankie JJ scores! And the <span style="font-size: 4.5vmin"><span style="color: dodgerblue"> THREE RIVERS LAKERS </span><span> bag the win. <br> It's <span style="font-size: 4.5vmin"><span style="color: dodgerblue"> F%^&$!@ </span> EMBARASSING! </span></br>`
+    }
+    else if (score >= '1') {
+        message.innerHTML = `Ferda. The <span style="font-size: 4.5vmin"><span style="color: whitesmoke"> LETTERKENNY IRISH</span></span> are in the lead`;
+    }
+    else if (score <= '-1') {
+        message.innerHTML = `The <span style="font-size: 4.5vmin"><span style="color: dodgerblue"> THREE RIVERS LAKERS</span></span> have taken the lead`
+    }
+    else {
+        message.innerText = 'Nice stats, no stats.'
+    }
+}
+
+function renderCountdown(cb) {
+    let count = 120;
+    countdownEl.style.visibility = 'visible';
+    countdownEl.innerText = count;
+    // write an ITERABLE to parse the Countdown Sequence //
+    const timerID = setInterval(function () {
+        count --;
+        if (count) {
+            countdownEl.innerText = count;
+        } else {
+            clearInterval(timerID);
+            countdownEl.style.visibility = 'visible';
+            cb();
+        }
+    }, 1000);
+}
 
 // Then we need to activate our borders so the puck bounces off the BORDER of the ICE <div>
 
@@ -136,42 +186,11 @@ function render() {
 
 // Then, we need to set borders to keep each Player's STICKS from crossing center ice
 
-
 //// I want to make my mouse cursor the PLAYER ONE STICK but it's also 3am and I'd love to ask you guys how to modify a cursor for the purpose of game design ////
-
-
-
-// Step TWO -- Update all impacted STATE (handleMove(evt) etc etc) and then call RENDER
-
-
-
-
-/// Step THREE -- Update STATE again (any LETS you declared) and call RENDER
-
-winner = getWinner();
-render();
-
-
-//// Step FOUR -- Introduce WINNING LOGIC ////
-/// a For If seems like it'd work here //
-
-function getWinner() {
-    
-}
-
-
-
-///// Step FIVE -- the RENDER function! Visualize all STATE and INFO inthe DOM
-
-function render() {
-    renderBoard();
-    renderScore();
-    renderMessage();
-
 
 // Next, we want to HIDE or SHOW the PLAY AGAIN BUTTON based on if there's a WINNER determined//
     playAgainBtn.disabled = !winner;
-}
+
 
 
 /// RENDER THE BOARD aka the ICE RINK!  /////
@@ -204,24 +223,3 @@ function renderScore() {
 
 
 
-////// WINNING MESSAGE & LEAD MESSAGE //////
-function renderMessage() {
-    if (winner === 'T') {
-        message.innerHTML = `a TIE? What's the matter, <span style="font-size: 4.5vmin"><span style="color: whitesmoke"> BOOMTOWN? </span></span> Did somebody's little sister eat their last <span style="font-size: 4.5vmin"><span style="color: orange"> Halloween Oreo </span></span> ?`
-    }
-    else if (winner >= '1') {
-        message.innerHTML =`Wheel, snipe, celly boys! The <span style="font-size: 4.5vmin"><span style="color: whitesmoke"> LETTERKENNY IRISH </span></span> get the W.`
-    }
-    else if (winner <= '-1') {
-        message.innerHTML = `JJ Frankie JJ scores! And the <span style="font-size: 4.5vmin"><span style="color: dodgerblue"> THREE RIVERS LAKERS </span><span> bag the win. <br> It's <span style="font-size: 4.5vmin"><span style="color: dodgerblue"> F%^&$!@ </span> EMBARASSING! </span></br>`
-    }
-    else if (score >= '1') {
-        message.innerHTML = `Ferda. The <span style="font-size: 4.5vmin"><span style="color: whitesmoke"> LETTERKENNY IRISH</span></span> are in the lead`;
-    }
-    else if (score <= '-1') {
-        message.innerHTML = `The <span style="font-size: 4.5vmin"><span style="color: dodgerblue"> THREE RIVERS LAKERS</span></span> have taken the lead`
-    }
-    else {
-        message.innerText = 'Nice stats, no stats.'
-    }
-}
