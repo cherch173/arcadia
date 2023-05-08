@@ -108,8 +108,8 @@ h3 {
 
 #stickOne {
     display: flex;
-    height: 14vmin;
-    width: 14vmin;
+    height: 15vmin;
+    width: 15vmin;
     background-color: crimson;
     border-radius: 50%;
     border: .25vmin solid rgba(178, 34, 34, .86);
@@ -121,9 +121,9 @@ h3 {
 }
 
 #stickTwo {
-    display: inline-flex;
-    height: 14vmin;
-    width: 14vmin;
+    display: flex;
+    height: 15vmin;
+    width: 15vmin;
     background-color: dodgerblue;
     border-radius: 50%;
     border: .25vmin solid rgba(0,0,173, 0.86);

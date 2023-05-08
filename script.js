@@ -64,7 +64,7 @@ document.addEventListener('keydown', (evt) => {
             x -= speed;  // subtracts the speed from the X position
             console.log(x);
             stick.style.left = x + 'px';
-            stick.style.transform = 'rotate(270deg)';   // fancy spins for the joystick making it like an Arcade
+            // stick.style.transform = 'rotate(270deg)';   // fancy spins for the joystick making it like an Arcade
         }
     } else if (evt.keyCode === 38) {
         // move up using UP ARROW KEY
@@ -72,7 +72,7 @@ document.addEventListener('keydown', (evt) => {
             y -= speed; // subtracts speed from the Y position
             console.log(y);
             stick.style.top = y + 'px';
-            stick.style.transform = 'rotate(-0deg)';
+            // stick.style.transform = 'rotate(-0deg)';
         }
     } else if (evt.keyCode === 39) {
         // move to the RIGHT!  Yoooooo
@@ -80,15 +80,15 @@ document.addEventListener('keydown', (evt) => {
             x += speed;   // ADDS speed to the X position
             console.log(x);
             stick.style.left = x + 'px';
-            stick.style.transform = 'rotate(90deg)'; 
+            // stick.style.transform = 'rotate(90deg)'; 
         }
     } else if (evt.keyCode === 40) {
         // move the stick DOWN baybay!
-        if (y < 275) {
+        if (y < 271) {
             y += speed;
             console.log(y);
             stick.style.top = y + 'px';
-            stick.style.transform = 'rotate(180deg)';
+            // stick.style.transform = 'rotate(180deg)';
         }
     }
 })
