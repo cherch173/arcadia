@@ -103,7 +103,7 @@ h3 {
 }
 
 #ice div {
-    cursor: pointer;
+    cursor:grab;
 }
 
 #stickOne {

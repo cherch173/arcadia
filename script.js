@@ -5,19 +5,18 @@
 /*----- CONSTANTS -----*/
 
 // First, we'll assign COLORS to PLAYER VALUE of 1 and -1 for our STICKS and TRANSPARENT for null
-const playerMsgColor = {
-    '1': 'rgba(245, 245, 173, 0.86)',
-    '-1': 'rgba(30, 154, 255, 0.86)',
-    'null': 'transparent',
-}
-
 
 // Then, we'll declare our CONTROLLERS/STICKS in an empty ARRAY //
 
-const controllers = []
-
-
 // Then, some sweet, sweet theme music //
+
+const playerMsgColor = {
+    '1': 'rgba(245, 245, 173, 0.86)',
+    '-1': 'rgba(30, 154, 255, 0.86)',
+}
+
+const sticks = []
+
 
 const AUDIO = new Audio('')
 
@@ -29,29 +28,26 @@ const AUDIO = new Audio('')
 // First, we begin with the scoring logic using a let SCORES OBJECT to store our game's SCORE //
 // The OBJECT KEY of 'p' will be PLAYER, 'c' will be COMPUTER, 't' will be tie
 
-let scores
-
 // Then we'll declare a let RESULTS OBJECT to store the OUTCOMES //
 // The OBJECT KEY of 'p' will be PLAYER, 'c' will be COMPUTER, 't' will be tie
 // The OBJECT VALUES of 'L' will equal LETTERKENNY and and 'Z' for THREE RIVERS LAKERS
-let results
 
 // Then we declare a let WINNER STRING of 'p' if PLAYER wins, 'c' if COMPUTER wins and 't' if its a TIE
-let winner; 
 
 // Yaso, its hockey so we'll need a game board (the ICE), a scoreboard that updates at each goal per player, a winner, and a score (tally) for each player
 
-let board;
-
 // Goals! Goals seem like they would be an EVENT LISTENER somehow inside a LET
+//maybe make them span classes in the border of the ICE? Can you do that? I feel like we can instead of building a new div within a div within a div within a div (oyyyy)
 
-let goal // maybe make them span classes in the border of the ICE? Can you do that? I feel like we can instead of building a new div within a div within a div within a div (oyyyy)
+let board, stick, score, results, winner, goal;
+
+
 
 
 /////////////////////////////////////////
 /*----- cached ELEMENT references -----*/
 
-// Next, we'll select H2 to be the theatre that displays a message delcaring who's TURN IT IS or WHO THE WINNER is //
+// Next, we'll select H3 to be the theatre that displays a message delcaring WHO THE WINNER is //
 let message  = document.getElementById('h3')
 
 // Then, we'll declare our FACE OFF button at the top
@@ -60,15 +56,16 @@ const faceOffBtn = document.querySelector('faceOffBtn')
 // Then we'll declare our PLAY AGAIN button at the bottom
 const playAgainBtn = document.querySelector('playAgainButton')
 
-
+// Then we'll cache our COUNTDOWN Clock
+let countdownEl = document.getElementById('countdown')
 
 
 
 ///////////////////////////////
 /*----- EVENT LISTENERS -----*/
 
-// Next, we add an Event Listener to the BOARD 
-document.getElementById('ice').addEventListener('click', handleMove);
+// Next, we add an Event Listener to the ICE to make it interactive
+document.getElementById('ice').addEventListener('onMouseDown', stickOne),
 
 // Next, we add an Event Listener to activate our FACE OFF feature
 faceOffBtn.addEventListener('click', initialize);
@@ -89,16 +86,15 @@ playAgainBtn.addEventListener('click', initialize);
 init ();
 // Initialize all STATE then call render();
 function init () {
-    scores = {
+    score = {
         p: 0,
-        t: 0,
         c: 0,
     }
     results = {
         p: 'null',
         c: 'null'
     }
-    winner = 't'
+    winner = 'p'
     render();
 }
 
@@ -109,27 +105,79 @@ function renderBoard () {
 }
 
 
-/// Now we have to program the Keyboard Controls to move your STICK //
-function moveController(evt) {
-    // Use a GUARD to prevent STICK from crossing CENTER ICE
-if (evt.target.tagName !== 'stringyouwant') return;
+/// Now we have to program the Keyboard Controls to move your STICK ///
+// never wrote an algorithm before...wish me luck //
 
-//call RENDER //
-render();
+
+stickOne.onMouseDown = function(evt) {
+    // use getBoundingClientRect() to make the mouse position relative to the JOYSTICK
+    let shiftX = evt.clientX - stickOne.getBoundingClientRect().left;
+    let shiftY = evt.clientY - stickOne.getBoundingClientRect().top;
+    // prepare the JOYSTICK to move. Position it absolute and on top by the Z Index
+    stickOne.style.position = 'absolute';
+    stickOne.style.zIndex = 1000;
+    // next we move it out of any parent elements directly into the ICE
+    document.ice.append(stickOne);
+    // next we have to center the JOYSTICK at positional coordinates
+    function moveAt(pageX, pageY) {
+        stickOne.style.left = evt.pageX - shiftX + 'vmin';
+        stickOne.style.top = evt.pageY - shiftY + 'vmin';
+
+    }
+    // now...I'm going to attempt to move our absolutely positioned JOYSTICK under the Mouse Pointer
+    moveAt(evt.pageX, evt.pageY) ;
+
+    function onMouseMove(evt) {
+        moveAt(evt.pageX, evt.PageY);
+    }
+    // now I'll try to move the JOYSTICK with the Mouse
+    document.addEventListener('mouseMove', onMouseMove);
+    // now the ability to release the JOYSTICK when you stop holding CLICK
+    stickOne.onMouseUp = function () {
+        document.removeEventListener('mouseMove', onMouseMove);
+        stickOne.onMouseUp = null;
+    }
+
 }
 
-// Now we write out a function to RENDER the SCORE
+stickOne.onDragStart = function() {
+    return false;
+}
+
+
+// function moveController(evt) {
+//     // Use a GUARD to prevent STICK from crossing CENTER ICE
+// if (evt.target.tagName !== 'stick') return;
+
+// //call RENDER //
+// render();
+// }
+
+// // NOW we have to program the STICKS to be able to SHOOT the PUCK //
+
+// function handleShot(evt) {
+//     if (evt.target.sticks === '')
+
+// // call RENDER //
+// render();
+// }
+
+/////////////
+
+// Now we write out a function to RENDER the SCOREBOARD
 function renderScores() {
     //use a for loop to iterate//
-    for (let key in scores) {
+    for (let key in score) {
         const scoreElement = document.getElementById(`${key}-score`);
-        scoreElement.innerText = scores[key  ];
+        scoreElement.innerText = score[key];
     }
 }
 
 function renderResults () {
 
 }
+
+///////////////
 
 // FINALLY //
 // ^^^ *SECOND* we invoke what we RENDER in the RENDER FUNCTION 
@@ -183,6 +231,10 @@ function renderCountdown(cb) {
 }
 
 playAgainBtn.disabled = !winner;
+
+
+/// Initial JS Pseudocode ///
+
 // Then we need to activate our borders so the puck bounces off the BORDER of the ICE <div>
 
 // Then, We need to emulate PUCK movement and determine a max speed //
