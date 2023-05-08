@@ -28,8 +28,10 @@
  let x = 0;
  let y = 0;
  let speed = 10;
-let windowWidth = window.innerWidth;
-let windowHeight = window.innerHeight;
+
+
+// The Puck Object
+let puck
 
 
 // /////////////////////////////////////////
@@ -68,19 +70,21 @@ document.addEventListener('keydown', (evt) => {
         // move up using UP ARROW KEY
         if (y > 0) {
             y -= speed; // subtracts speed from the Y position
+            console.log(y);
             stick.style.top = y + 'px';
             stick.style.transform = 'rotate(-0deg)';
         }
     } else if (evt.keyCode === 39) {
         // move to the RIGHT!  Yoooooo
-        if (x +100 < windowWidth) {
+        if (x < 275) {
             x += speed;   // ADDS speed to the X position
+            console.log(x);
             stick.style.left = x + 'px';
             stick.style.transform = 'rotate(90deg)'; 
         }
     } else if (evt.keyCode === 40) {
         // move the stick DOWN baybay!
-        if (y + 100 < windowHeight) {
+        if (y < 275) {
             y += speed;
             console.log(y);
             stick.style.top = y + 'px';

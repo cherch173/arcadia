@@ -6,7 +6,7 @@
 
 body {
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -107,13 +107,13 @@ h3 {
 }
 
 #stickOne {
-    display: inline-flex;
+    display: flex;
     height: 14vmin;
     width: 14vmin;
     background-color: crimson;
     border-radius: 50%;
     border: .25vmin solid rgba(178, 34, 34, .86);
-    position: absolute;
+    position:relative;
     top: 0;
     left: 0;
     transform: rotate(0deg);
@@ -127,6 +127,7 @@ h3 {
     background-color: dodgerblue;
     border-radius: 50%;
     border: .25vmin solid rgba(0,0,173, 0.86);
+    position: relative;
 }
 
 /* The Puck  */
@@ -139,8 +140,9 @@ h3 {
     border: 6px solid black;
     border-radius: 50%;
     background-color: black;
-    top: calc(50% - 15px);
-    left: calc(50% - 15%);
+    position: relative;
+    top: 0;
+    left: 0;
 }
 
 /* A PLAY AGAIN BUTTON  */
