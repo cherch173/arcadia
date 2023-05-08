@@ -148,7 +148,7 @@ h3 {
 /* A PLAY AGAIN BUTTON  */
 
 #playAgainButton {
-    /* visibility: hidden; */
+    visibility: hidden;
     background-color: rgba(172, 53, 77, 0.86);
     border: 4px double rgba(245, 245, 245, 0.73);
     border-radius: 10%;
