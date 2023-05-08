@@ -20,7 +20,7 @@ header {
     font-size: 6vmin;
     color: rgba(220, 20, 60, .86);
     text-shadow: -1px 1px whitesmoke, -2px 2px black;
-    margin-top: 80px;
+    margin-top: 50px;
 }
 
 h3 {
@@ -47,12 +47,31 @@ h3 {
     margin-left: 3vmin;
 }
 
+/* The Period Countdown Clock */
+#countdown {
+    /* visibility: hidden; */
+    height: 7vmin;
+    width: 12vmin;
+    border: 1vmin double rgb(245, 245, 245, .86);
+    border-radius: 10%;
+    font-size: 3vmin;
+    padding: .5vmin 0 .5vmin 0;
+    justify-self: center;
+    align-self: center;
+    color: bisque;
+    text-shadow: -1px 1px rgba(127, 255, 0, .73);
+    background-color: black;
+}
+
 /* FACE OFF (aka GAME START) BUTTON */
 
 #faceOffButton {
+    justify-content: center;
+    align-items: center;
     background-color: rgba(172, 53, 77, 0.86);
     border: 4px double rgba(245, 245, 245, 0.73);
     border-radius: 10%;
+    text-align: center;
     font-family: 'Russo One', sans-serif;
     color: whitesmoke;
     text-shadow: -1px 1px black;
@@ -73,11 +92,11 @@ h3 {
 #ice {
     display: grid;
     grid-template-columns: repeat(11, 8vmin);
-    grid-template-rows: repeat(3, 16vmin);
+    grid-template-rows: repeat(3, 18vmin);
     gap: 1vmin;
     justify-content: center;
     align-items: center;
-    margin: 20px 20px 30px 20px;
+    margin: 20px 20px 20px 20px;
     border-radius: 17.3%;
     border: 10px double rgba(147, 51, 68, 0.86);
     background-color: rgba(246, 247, 255, .86);
@@ -118,23 +137,6 @@ h3 {
     top: calc(50% - 15px);
     left: calc(50% - 15%);
 }
-
-
-/* The Period Countdown Clock */
-#countdown {
-    /* visibility: hidden; */
-    height: 7vmin;
-    width: 12vmin;
-    border: 1vmin double rgb(245, 245, 245, .86);
-    border-radius: 10%;
-    font-size: 3vmin;
-    padding: 1vmin;
-    justify-self: center;
-    align-self: center;
-    color: whitesmoke;
-}
-
-
 
 /* A PLAY AGAIN BUTTON  */
 
