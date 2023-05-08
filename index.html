@@ -18,16 +18,22 @@
     
     <h3 id="message">CONTROLS -- to MOVE your PLAYER use the KEYBOARD ARROWS</h3>
     
-    <h4 id="p1-score"></h4>
-    <div id="countdown" class="flex-ctr"></div>
-    <h4 id="c-score"></h4>
+    <div id="scoreboard" style="justify-content: center">
+        <h4 id="p1-score" style="color: crimson">LK -- 2 </h4>
+        <div id="countdown" class="flex-ctr">2:00</div>
+        <h4 id="c-score" style="color: dodgerblue"> TRL -- 0</h4>
+    </div>
     
-    <button id="faceOffButton" style="justify-content: center;">Puck Drop</button>
+    <button id="faceOffButton" style="justify-content: center;">Face Off</button>
 
-    <section id="board">
-
-        <main id="ice">
-            <div id="r0c0"></div>
+    <main id="board">
+        <section id="ice">
+            <section class="Sticks">
+                <div id="stickOne"></div>
+                <div id="stickTwo"></div>
+            </section>
+            <div id="puck"></div>
+            <!-- <div id="r0c0"></div>
             <div id="r0c1"></div>
             <div id="r0c2"></div>
             <div id="r0c3"></div>
@@ -43,7 +49,6 @@
             <div id="r1c1"></div>
             <div id="r1c2"></div>
             <div id="r1c3"></div>
-            <div id="puck"></div>
             <div id="r1c4"></div>
             <div id="r1c5"></div>
             <div id="r1c6"></div>
@@ -86,13 +91,10 @@
             <div id="r4c7"></div>
             <div id="r4c8"></div>
             <div id="r4c9"></div>
-            <div id="r4c10"></div>
-        </main>
-            <section class="Sticks">
-                <div id="stickOne"></div>
-                <div id="stickTwo"></div>
-            </section>
-    </section>
+            <div id="r4c10"></div> -->
+        </section>
+            
+    </main>
 
 
 </body>

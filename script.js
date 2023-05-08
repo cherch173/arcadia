@@ -12,14 +12,9 @@ const playerMsgColor = {
 }
 
 
-
-
 // Then, we'll declare our CONTROLLERS/STICKS in an empty ARRAY //
 
-const sticks = []
-
-
-
+const controllers = []
 
 
 // Then, some sweet, sweet theme music //
@@ -100,11 +95,27 @@ function init () {
         c: 0,
     }
     results = {
-        p: 'L',
-        c: 'L'
+        p: 'null',
+        c: 'null'
     }
     winner = 't'
     render();
+}
+
+/// RENDER THE BOARD aka the ICE RINK!  /////
+// in class we used forEach callback functions and literals too. 
+function renderBoard () {
+
+}
+
+
+/// Now we have to program the Keyboard Controls to move your STICK //
+function moveController(evt) {
+    // Use a GUARD to prevent STICK from crossing CENTER ICE
+if (evt.target.tagName !== 'stringyouwant') return;
+
+//call RENDER //
+render();
 }
 
 // Now we write out a function to RENDER the SCORE
@@ -120,13 +131,16 @@ function renderResults () {
 
 }
 
+// FINALLY //
 // ^^^ *SECOND* we invoke what we RENDER in the RENDER FUNCTION 
-
 // *FIRST* we need our RENDER FUNCTION to give a HUB to all RENDERING //
 
 function render() {
-    renderScores();
-    renderResults();
+    renderCountdown(function() {
+        renderScores();
+        renderResults();
+        renderMessage();
+    })
 }
 
 ////// WINNING MESSAGE & LEAD MESSAGE //////
@@ -168,6 +182,7 @@ function renderCountdown(cb) {
     }, 1000);
 }
 
+playAgainBtn.disabled = !winner;
 // Then we need to activate our borders so the puck bounces off the BORDER of the ICE <div>
 
 // Then, We need to emulate PUCK movement and determine a max speed //
@@ -189,36 +204,6 @@ function renderCountdown(cb) {
 //// I want to make my mouse cursor the PLAYER ONE STICK but it's also 3am and I'd love to ask you guys how to modify a cursor for the purpose of game design ////
 
 // Next, we want to HIDE or SHOW the PLAY AGAIN BUTTON based on if there's a WINNER determined//
-    playAgainBtn.disabled = !winner;
-
-
-
-/// RENDER THE BOARD aka the ICE RINK!  /////
-// in class we used forEach callback functions and literals too. 
-function renderBoard () {
-
-}
-
-
-/// Now we have to program the Keyboard Controls to move your STICK //
-function moveController() {
-
-
-}
-
-///// RENDER SCORE /////
-function renderScore() {
-    if (score >= '1') {
-
-    } else if (score <= '-1') {
-
-    } else {
-
-    }
-}
-
-
-////// RENDER THE SCOREBOARD /////
 
 
 

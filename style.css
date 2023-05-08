@@ -31,6 +31,22 @@ h3 {
     margin-bottom: 5px;
 }
 
+#scoreboard {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#p1-score {
+    margin-right: 3vmin;
+}
+
+#c-score {
+    margin-left: 3vmin;
+}
+
 /* FACE OFF (aka GAME START) BUTTON */
 
 #faceOffButton {
@@ -39,6 +55,7 @@ h3 {
     border-radius: 10%;
     font-family: 'Russo One', sans-serif;
     color: whitesmoke;
+    text-shadow: -1px 1px black;
     margin-top: 10px;
     max-width: 25%;
 }
@@ -46,7 +63,7 @@ h3 {
 #faceOffButton:hover {
     background-color: rgba(173, 106, 106, 0.86);
     color: bisque;
-    transform: scale(1.11);
+    transform: scale(1.1);
     transition: transform 142ms ease-in;
     border-color: rgba(48, 19, 19, 0.73)
 }
@@ -105,16 +122,16 @@ h3 {
 
 /* The Period Countdown Clock */
 #countdown {
-    visibility: hidden;
-    height: 10vmin;
-    width: 10vmin;
+    /* visibility: hidden; */
+    height: 7vmin;
+    width: 12vmin;
     border: 1vmin double rgb(245, 245, 245, .86);
     border-radius: 10%;
-    font-size: 5vmin;
+    font-size: 3vmin;
     padding: 1vmin;
     justify-self: center;
     align-self: center;
-    color: bisque;
+    color: whitesmoke;
 }
 
 
@@ -122,11 +139,13 @@ h3 {
 /* A PLAY AGAIN BUTTON  */
 
 #playAgainButton {
+    /* visibility: hidden; */
     background-color: rgba(172, 53, 77, 0.86);
     border: 4px double rgba(245, 245, 245, 0.73);
     border-radius: 10%;
     font-family: 'Russo One', sans-serif;
     color: whitesmoke;
+    text-shadow: -1px 1px black;
     margin-bottom: 60px;
     max-width: 25%;
 }
@@ -134,7 +153,7 @@ h3 {
 #playAgainButton:hover {
     background-color: rgba(173, 106, 106, 0.86);
     color: bisque;
-    transform: scale(1.13);
+    transform: scale(1.17);
     transition: transform 142ms ease-in;
     border-color: rgba(48, 19, 19, 0.73)
 }
