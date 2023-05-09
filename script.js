@@ -12,7 +12,7 @@ const stickTwo = document.querySelector('#stickTwo');
 
 // The PUCK //
 
-const puck = document.querySelector('#puck');
+const puck = document.getElementById('#puck');
 
 // The ICE //
 const ice = document.querySelector('#ice');
@@ -30,6 +30,7 @@ const iceHeight = ice.height;
 // // The OBJECT VALUES of 'L' will equal LETTERKENNY and and 'Z' for THREE RIVERS LAKERS
 
 // // Then we declare a let WINNER STRING of 'p' if PLAYER wins, 'c' if COMPUTER wins and 't' if its a TIE
+
 
  let x = 0;
  let y = 0;
@@ -74,7 +75,7 @@ const faceOffBtn = document.querySelector('faceOffBtn')
 // // Then we'll cache our COUNTDOWN Clock
 // let countdownEl = document.getElementById('countdown')
 
-
+// Calculating Score Tally
 
 
 
@@ -87,14 +88,14 @@ const faceOffBtn = document.querySelector('faceOffBtn')
 document.addEventListener('keydown', (evt) => {
     if (evt.keyCode === 65) {
         // move stick to the LEFT using LEFT ARROW KEY
-        if (x > 5) {
+        if (x > 10) {
             x -= stickSpeed;  // subtracts the speed from the X position
             console.log(x);
             stickOne.style.left = x + 'px';
         }
     } else if (evt.keyCode === 87) {
         // move up using UP ARROW KEY
-        if (y > 0) {
+        if (y > -10) {
             y -= stickSpeed; // subtracts speed from the Y position
             console.log(y);
             stickOne.style.top = y + 'px';
@@ -116,8 +117,10 @@ document.addEventListener('keydown', (evt) => {
     }
 })
 
-
 // NOW we need to make PLAYER 2's JOYSTICK move USING ARROW KEYS
+
+// *** PLAYER TWO CONTROLS
+
 document.addEventListener('keydown', (evt) => {
     if (evt.keyCode === 37) {
         // move stick to the LEFT using LEFT ARROW KEY
@@ -135,14 +138,14 @@ document.addEventListener('keydown', (evt) => {
         }
     } else if (evt.keyCode === 39) {
         // move to the RIGHT!  Yoooooo
-        if (x < 475) {
+        if (x < 450) {
             x += stickSpeed;   // ADDS speed to the X position
             console.log(x);
             stickTwo.style.left = x + 'px';
         }
     } else if (evt.keyCode === 40) {
         // move the stick DOWN baybay!
-        if (y < 225) {
+        if (y < 200) {
             y += stickSpeed;
             console.log(y);
             stickTwo.style.top = y + 'px';
@@ -195,7 +198,7 @@ function nextTick () {
         movePuck();
         checkCollision();
         nextTick()
-    }, 10);
+    }, 100);
 }
 
 
@@ -248,6 +251,8 @@ function movePuck () {
 //         renderMessage();
 //     })
 // }
+
+
 
 // ////// WINNING MESSAGE & LEAD MESSAGE //////
 // function renderMessage() {
