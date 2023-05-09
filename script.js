@@ -3,8 +3,7 @@
 
 // //////////////////////////
 // /*----- CONSTANTS -----*/
-// const board = document.querySelector('#board')
-// const ctx = board.getContext("2d")
+const board = document.getElementById('#board')
 
 // The JOYSTICKS //
 const stickOne = document.querySelector('#stickOne');
@@ -54,7 +53,7 @@ let interval;
 // The Score Objects
 
 let player1Score = 0
-let compScore = 0
+let player2Score = 0
 
 
 
