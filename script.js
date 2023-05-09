@@ -46,6 +46,12 @@ let puckXDirection = 0
 let puckYDirection = 0
 let puckSpeed = 17.3
 
+// The Interval (for Motion)
+
+let interval;
+
+
+
 // The Score Objects
 
 let player1Score = 0
@@ -113,29 +119,6 @@ document.addEventListener('keydown', (evt) => {
 })
 
 
-function createPuck() {
-    puckSpeed = 1; // sets initial speed
-    if(Math.round(Math.random()) == 1) {  // if a rounded random integer is provided
-        puckXDirection = 1; // move in a random direction
-    }
-    else {
-        puckXDirection = -1; // OR the opposite direction
-    }
-    if(Math.round(Math.random()) ==1) {
-        puckYDirection = math.random() *1; // adds random directions
-    }
-    else {
-        puckYDirection = math.random() * 1;
-    }
-    puckX = iceWidth / 2;
-    puckY = iceHeight / 2;
-}
-
-
-
-
-
-
 // Next, we add an Event Listener to activate our FACE OFF feature
 // faceOffBtn.addEventListener('click', init)
 
@@ -152,24 +135,42 @@ function createPuck() {
 
 
 // // FIRST AND FOREMOST WE INITIALIZE OUR OBJECTS //
+
 // init ();
 // // Initialize all STATE then call render();
-// function init () {
-//     score = {
-//         p: 0,
-//         c: 0,
-//     }
-//     results = {
-//         p: 'null',
-//         c: 'null'
-//     }
-//     winner = null;
-//     render();
-// }
+function init () {
+    score = {
+        p: 0,
+        c: 0,
+    }
+    results = {
+        p: 'null',
+        c: 'null'
+    }
+    winner = null;
+    render();
+}
+
+// NOW start the game //
+function gameStart() {
+    nextTick();
+}
+
+// Now... CREATE the essence of MOTION ITSELF to (eventually) APPLY to THE PUCK ELEMENT //
+function nextTick () {
+    interval = setInterval(() => {
+        movePuck();
+        checkCollision();
+        nextTick()
+    }, 10);
+}
+
 
 // GET THE PUCK TO BOUNCE AROUND PONG STYLE //
 
+function movePuck() {
 
+}
 
 
 
@@ -202,26 +203,26 @@ function createPuck() {
 // }
 
 // ////// WINNING MESSAGE & LEAD MESSAGE //////
-function renderMessage() {
-    if (winner === 'T') {
-        message.innerHTML = `a TIE? What's the matter, <span style="font-size: 4.5vmin"><span style="color: whitesmoke"> BOOMTOWN? </span></span> Did somebody's little sister eat their last <span style="font-size: 4.5vmin"><span style="color: orange"> Halloween Oreo </span></span> ?`
-    }
-    else if (winner >= '1') {
-        message.innerHTML =`Wheel, snipe, celly boys! The <span style="font-size: 4.5vmin"><span style="color: whitesmoke"> LETTERKENNY IRISH </span></span> get the W.`
-    }
-    else if (winner <= '-1') {
-        message.innerHTML = `JJ Frankie JJ scores! And the <span style="font-size: 4.5vmin"><span style="color: dodgerblue"> THREE RIVERS LAKERS </span><span> bag the win. <br> It's <span style="font-size: 4.5vmin"><span style="color: dodgerblue"> F%^&$!@ </span> EMBARASSING! </span></br>`
-    }
-    else if (score >= '1') {
-        message.innerHTML = `Ferda. The <span style="font-size: 4.5vmin"><span style="color: whitesmoke"> LETTERKENNY IRISH</span></span> are in the lead`;
-    }
-    else if (score <= '-1') {
-        message.innerHTML = `The <span style="font-size: 4.5vmin"><span style="color: dodgerblue"> THREE RIVERS LAKERS</span></span> have taken the lead`
-    }
-    else {
-        message.innerText = 'Nice stats, no stats.'
-    }
-}
+// function renderMessage() {
+//     if (winner === 'T') {
+//         message.innerHTML = `a TIE? What's the matter, <span style="font-size: 4.5vmin"><span style="color: whitesmoke"> BOOMTOWN? </span></span> Did somebody's little sister eat their last <span style="font-size: 4.5vmin"><span style="color: orange"> Halloween Oreo </span></span> ?`
+//     }
+//     else if (winner >= '1') {
+//         message.innerHTML =`Wheel, snipe, celly boys! The <span style="font-size: 4.5vmin"><span style="color: whitesmoke"> LETTERKENNY IRISH </span></span> get the W.`
+//     }
+//     else if (winner <= '-1') {
+//         message.innerHTML = `JJ Frankie JJ scores! And the <span style="font-size: 4.5vmin"><span style="color: dodgerblue"> THREE RIVERS LAKERS </span><span> bag the win. <br> It's <span style="font-size: 4.5vmin"><span style="color: dodgerblue"> F%^&$!@ </span> EMBARASSING! </span></br>`
+//     }
+//     else if (score >= '1') {
+//         message.innerHTML = `Ferda. The <span style="font-size: 4.5vmin"><span style="color: whitesmoke"> LETTERKENNY IRISH</span></span> are in the lead`;
+//     }
+//     else if (score <= '-1') {
+//         message.innerHTML = `The <span style="font-size: 4.5vmin"><span style="color: dodgerblue"> THREE RIVERS LAKERS</span></span> have taken the lead`
+//     }
+//     else {
+//         message.innerText = 'Nice stats, no stats.'
+//     }
+// }
 
 // function renderCountdown(cb) {
 //     let count = 120;
