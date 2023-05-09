@@ -6,15 +6,13 @@
 // const board = document.querySelector('#board')
 // const ctx = board.getContext("2d")
 
-// The JOYSTICK //
-const stick = document.querySelector('#stickOne');
+// The JOYSTICKS //
+const stickOne = document.querySelector('#stickOne');
+const stickTwo = document.querySelector('#stickTwo');
 
 // The PUCK //
 
 const puck = document.querySelector('#puck');
-const puckColor = "darkslategray";
-const puckBorderColor = "black";
-const puckRadius = 15;
 
 // The ICE //
 const ice = document.querySelector('#ice');
@@ -87,36 +85,71 @@ const faceOffBtn = document.querySelector('faceOffBtn')
 
 // FIRST and FOREMOST we'll add an EVENT LISTENER to make the JOYSTICK move USING ARROW KEYS
 document.addEventListener('keydown', (evt) => {
-    if (evt.keyCode === 37) {
+    if (evt.keyCode === 65) {
         // move stick to the LEFT using LEFT ARROW KEY
         if (x > 5) {
             x -= stickSpeed;  // subtracts the speed from the X position
             console.log(x);
-            stick.style.left = x + 'px';
+            stickOne.style.left = x + 'px';
         }
-    } else if (evt.keyCode === 38) {
+    } else if (evt.keyCode === 87) {
         // move up using UP ARROW KEY
         if (y > 0) {
             y -= stickSpeed; // subtracts speed from the Y position
             console.log(y);
-            stick.style.top = y + 'px';
+            stickOne.style.top = y + 'px';
         }
-    } else if (evt.keyCode === 39) {
+    } else if (evt.keyCode === 83) {
         // move to the RIGHT!  Yoooooo
-        if (x < 250) {
-            x += stickSpeed;   // ADDS speed to the X position
+        if (x < 225) {
+            x += puckSpeed;   // ADDS speed to the X position
             console.log(x);
-            stick.style.left = x + 'px';
+            stickOne.style.left = x + 'px';
         }
-    } else if (evt.keyCode === 40) {
+    } else if (evt.keyCode === 90) {
         // move the stick DOWN baybay!
-        if (y < 245) {
-            y += stickSpeed;
+        if (y < 250) {
+            y += puckSpeed;
             console.log(y);
-            stick.style.top = y + 'px';
+            stickOne.style.top = y + 'px';
         }
     }
 })
+
+
+// NOW we need to make PLAYER 2's JOYSTICK move USING ARROW KEYS
+document.addEventListener('keydown', (evt) => {
+    if (evt.keyCode === 37) {
+        // move stick to the LEFT using LEFT ARROW KEY
+        if (x > 250) {
+            x -= stickSpeed;  // subtracts the speed from the X position
+            console.log(x);
+            stickTwo.style.left = x + 'px';
+        }
+    } else if (evt.keyCode === 38) {
+        // move up using UP ARROW KEY
+        if (y >= -25) {
+            y -= stickSpeed; // subtracts speed from the Y position
+            console.log(y);
+            stickTwo.style.top = y + 'px';
+        }
+    } else if (evt.keyCode === 39) {
+        // move to the RIGHT!  Yoooooo
+        if (x < 475) {
+            x += stickSpeed;   // ADDS speed to the X position
+            console.log(x);
+            stickTwo.style.left = x + 'px';
+        }
+    } else if (evt.keyCode === 40) {
+        // move the stick DOWN baybay!
+        if (y < 225) {
+            y += stickSpeed;
+            console.log(y);
+            stickTwo.style.top = y + 'px';
+        }
+    }
+})
+
 
 
 // Next, we add an Event Listener to activate our FACE OFF feature
@@ -168,14 +201,28 @@ function nextTick () {
 
 // GET THE PUCK TO BOUNCE AROUND PONG STYLE //
 
-function movePuck() {
-
+function movePuck () {
+    if (x > 0) {
+        x -= puckSpeed;  // subtracts the speed from the X position
+        console.log(x);
+        puck.style.left = x + 'px'; // by 1 px
+    }   
+        else if (y > 0) {
+        y -= puckSpeed;  // subtracts the speed from the X position
+        console.log(x);
+       puck.style.top = y + 'px'; // by increment of 1 pixel
+    }   
+        else if (x < 500) {
+        x += puckSpeed; // adds speed from the x position
+        console.log(x);
+        puck.style.right = x + 'px';
+        }
+        else if (y > 250) {
+            y += puckSpeed; // adds speed from the Y position
+            console.log(y);
+            puck.style.bottom = y + 'px';
+        }
 }
-
-
-
-
-
 
 
 // /// RENDER THE BOARD aka the ICE RINK!  /////
