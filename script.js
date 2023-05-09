@@ -3,12 +3,22 @@
 
 // //////////////////////////
 // /*----- CONSTANTS -----*/
+// const board = document.querySelector('#board')
+// const ctx = board.getContext("2d")
 
 // The JOYSTICK //
 const stick = document.querySelector('#stickOne');
 
 // The PUCK //
-let puck = document.querySelector('#puck');
+
+const puckColor = "darkslategray";
+const puckBorderColor = "black";
+const puckRadius = 15;
+
+// The ICE //
+const ice = document.querySelector('#ice');
+const iceWidth = ice.width;
+const iceHeight = ice.height;
 
 // ////////////////////////////////////////////////
 // /*----- app's STATE (Variables) aka lets -----*/
@@ -22,11 +32,6 @@ let puck = document.querySelector('#puck');
 
 // // Then we declare a let WINNER STRING of 'p' if PLAYER wins, 'c' if COMPUTER wins and 't' if its a TIE
 
-// // Yaso, its hockey so we'll need a game board (the ICE), a scoreboard that updates at each goal per player, a winner, and a score (tally) for each player
-
-// // Goals! Goals seem like they would be an EVENT LISTENER somehow inside a LET
-// //maybe make them span classes in the border of the ICE? Can you do that? I feel like we can instead of building a new div within a div within a div within a div (oyyyy)
-
  let x = 0;
  let y = 0;
  let stickSpeed = 25;
@@ -34,14 +39,18 @@ let puck = document.querySelector('#puck');
 
 // The Puck Object
 
-let ballX = 0
-let ballY = 0
-let puckSpeed = 17.3;
+let puckX = iceWidth / 2;
+let puckY = iceHeight / 2;
+let puckXDirection = 0
+let puckYDirection = 0
+let puckSpeed = 17.3
 
 // The Score Objects
 
 let player1Score = 0
 let compScore = 0
+
+
 
 
 // /////////////////////////////////////////
@@ -52,16 +61,20 @@ const faceOffBtn = document.querySelector('faceOffBtn')
 
 
 
+
+
 // // Next, we'll select H3 to be the theatre that displays a message delcaring WHO THE WINNER is //
 // let message  = document.getElementById('h3')
-
-
 
 // // Then we'll declare our PLAY AGAIN button at the bottom
 // const playAgainBtn = document.querySelector('playAgainButton')
 
 // // Then we'll cache our COUNTDOWN Clock
 // let countdownEl = document.getElementById('countdown')
+
+
+
+
 
 
 
@@ -100,35 +113,49 @@ document.addEventListener('keydown', (evt) => {
         }
     }
 })
+document.addEventListener('init', (evt) => {
+    if (evt) {
+        // drop puck
+        if (x > 5) {
+            x -= puckSpeed;  // subtracts the speed from the X position
+            console.log(x);
+            puck.style.left = x + 'px';
+        }
+    } else if (evt.keyCode === 38) {
+        // move up using UP ARROW KEY
+        if (y > 0) {
+            y -= puckSpeed; // subtracts speed from the Y position
+            console.log(y);
+            puck.style.top = y + 'px';
+        }
+    } else if (evt.keyCode === 39) {
+        // move to the RIGHT!  Yoooooo
+        if (x < 250) {
+            x += stickSpeed;   // ADDS speed to the X position
+            console.log(x);
+            stick.style.left = x + 'px';
+        }
+    } else if (evt.keyCode === 40) {
+        // move the stick DOWN baybay!
+        if (y > 250) {
+            y += stickSpeed;
+            console.log(y);
+            stick.style.top = y + 'px';
+        }
+    }
+})
 
 
-// GET THE PUCK TO BOUNCE AROUND PONG STYLE //
-
-// function puckDrop () {
-//     document.getElementById('puck').addEventListener(evt) => {
-//         if (evt.initialize) {
-//                 // Set the puck to move randomly within the ICE rink upon INITIALIZING //
-//             if (x > 5) {
-//                 x -= stickSpeed;  // subtracts the speed from the X position
-//                 console.log(x);
-//                 stick.style.left = x + 'px';
-//             }   
-//         }
-//     }
-//     render();
-// }
-        
 
 
 
-// // Next, we add an Event Listener to the ICE to make it interactive
-// document.getElementById('ice').addEventListener('click', initialize);
 
-// // Next, we add an Event Listener to activate our FACE OFF feature
-// faceOffBtn.addEventListener('click', init)
+// Next, we add an Event Listener to activate our FACE OFF feature
+faceOffBtn.addEventListener('click', init)
 
 // // Then we add an Event Listener to activate our PLAY AGAIN BUTTON
-playAgainBtn.addEventListener('click', initialize);
+playAgainBtn.addEventListener('click', init);
+
 
 
 
@@ -139,9 +166,9 @@ playAgainBtn.addEventListener('click', initialize);
 
 
 // // FIRST AND FOREMOST WE INITIALIZE OUR OBJECTS //
-initialize ();
+init ();
 // Initialize all STATE then call render();
-function inititialize () {
+function init () {
     score = {
         p: 0,
         c: 0,
@@ -154,29 +181,44 @@ function inititialize () {
     render();
 }
 
+// GET THE PUCK TO BOUNCE AROUND PONG STYLE //
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // /// RENDER THE BOARD aka the ICE RINK!  /////
 // // in class we used forEach callback functions and literals too. 
 // function renderBoard () {
-
-// }
-
-// // // NOW we have to program the STICKS to be able to SHOOT the PUCK //
-
-// // function shootTheJ() {
-
-// // // call RENDER //
-// // render();
-// // }
-
-// /////////////
-
-// // Now we write out a function to RENDER the SCOREBOARD
-// function renderScores() {
-//     //use a for loop to iterate//
-//     for (let key in score) {
-//         const scoreElement = document.getElementById(`${key}-score`);
-//         scoreElement.innerText = score[key];
-//     }
+    
+    // }
+    
+    // // // NOW we have to program the STICKS to be able to SHOOT the PUCK //
+    
+    // // function shootTheJ() {
+        
+        // // // call RENDER //
+        // // render();
+        // // }
+        
+        // /////////////
+        
+        // // Now we write out a function to RENDER the SCOREBOARD
+        // function renderScores() {
+            //     //use a for loop to iterate//
+            //     for (let key in score) {
+                //         const scoreElement = document.getElementById(`${key}-score`);
+                //         scoreElement.innerText = score[key];
+                //     }
 // }
 
 // function renderResults () {
@@ -219,21 +261,21 @@ function renderMessage() {
     }
 }
 
-// function renderCountdown(cb) {
-//     let count = 120;
-//     countdownEl.style.visibility = 'visible';
-//     countdownEl.innerText = count;
-//     // write an ITERABLE to parse the Countdown Sequence //
-//     const timerID = setInterval(function () {
-//         count --;
-//         if (count) {
-//             countdownEl.innerText = count;
-//         } else {
-//             clearInterval(timerID);
-//             countdownEl.style.visibility = 'visible';
-//             cb();
-//         }
-//     }, 1000);
-// }
+function renderCountdown(cb) {
+    let count = 120;
+    countdownEl.style.visibility = 'visible';
+    countdownEl.innerText = count;
+    // write an ITERABLE to parse the Countdown Sequence //
+    const timerID = setInterval(function () {
+        count --;
+        if (count) {
+            countdownEl.innerText = count;
+        } else {
+            clearInterval(timerID);
+            countdownEl.style.visibility = 'visible';
+            cb();
+        }
+    }, 1000);
+}
 
 playAgainBtn.disabled = !winner;

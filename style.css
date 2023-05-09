@@ -20,7 +20,7 @@ header {
     font-size: 6vmin;
     color: rgba(220, 20, 60, .86);
     text-shadow: -1px 1px whitesmoke, -2px 2px black;
-    margin-top: 50px;
+    margin-top: 86px;
 }
 
 h3 {
@@ -92,7 +92,7 @@ h3 {
 #ice {
     display: grid;
     grid-template-columns: repeat(11, 8vmin);
-    grid-template-rows: repeat(3, 18vmin);
+    grid-template-rows: repeat(3, 20vmin);
     gap: 1vmin;
     justify-content: center;
     align-items: center;
