@@ -34,7 +34,14 @@ let puck = document.querySelector('#puck');
 
 // The Puck Object
 
+let ballX = 0
+let ballY = 0
 let puckSpeed = 17.3;
+
+// The Score Objects
+
+let player1Score = 0
+let compScore = 0
 
 
 // /////////////////////////////////////////
@@ -69,7 +76,6 @@ document.addEventListener('keydown', (evt) => {
             x -= stickSpeed;  // subtracts the speed from the X position
             console.log(x);
             stick.style.left = x + 'px';
-            // stick.style.transform = 'rotate(270deg)';   // fancy spins for the joystick making it like an Arcade
         }
     } else if (evt.keyCode === 38) {
         // move up using UP ARROW KEY
@@ -98,15 +104,19 @@ document.addEventListener('keydown', (evt) => {
 
 // GET THE PUCK TO BOUNCE AROUND PONG STYLE //
 
-    function puckDrop () {
-        document.getElementById('puck').addEventListener(evt) => {
-            if (evt.initialize) {
-                // Set the puck to move randomly within the ICE rink upon INITIALIZING //
-               
-            }
-        }
-        render();
-    }
+// function puckDrop () {
+//     document.getElementById('puck').addEventListener(evt) => {
+//         if (evt.initialize) {
+//                 // Set the puck to move randomly within the ICE rink upon INITIALIZING //
+//             if (x > 5) {
+//                 x -= stickSpeed;  // subtracts the speed from the X position
+//                 console.log(x);
+//                 stick.style.left = x + 'px';
+//             }   
+//         }
+//     }
+//     render();
+// }
         
 
 
@@ -129,9 +139,9 @@ playAgainBtn.addEventListener('click', initialize);
 
 
 // // FIRST AND FOREMOST WE INITIALIZE OUR OBJECTS //
-init ();
+initialize ();
 // Initialize all STATE then call render();
-function init () {
+function inititialize () {
     score = {
         p: 0,
         c: 0,
