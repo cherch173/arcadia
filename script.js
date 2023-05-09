@@ -11,6 +11,7 @@ const stick = document.querySelector('#stickOne');
 
 // The PUCK //
 
+const puck = document.querySelector('#puck');
 const puckColor = "darkslategray";
 const puckBorderColor = "black";
 const puckRadius = 15;
@@ -56,15 +57,12 @@ let compScore = 0
 // /////////////////////////////////////////
 // /*----- cached ELEMENT references -----*/
 
+
 // // FIRST, we'll declare our FACE OFF button at the top that will eventually START the GAME
 const faceOffBtn = document.querySelector('faceOffBtn')
 
-
-
-
-
 // // Next, we'll select H3 to be the theatre that displays a message delcaring WHO THE WINNER is //
-// let message  = document.getElementById('h3')
+// const message = document.querySelector('h3')
 
 // // Then we'll declare our PLAY AGAIN button at the bottom
 // const playAgainBtn = document.querySelector('playAgainButton')
@@ -113,37 +111,25 @@ document.addEventListener('keydown', (evt) => {
         }
     }
 })
-document.addEventListener('init', (evt) => {
-    if (evt) {
-        // drop puck
-        if (x > 5) {
-            x -= puckSpeed;  // subtracts the speed from the X position
-            console.log(x);
-            puck.style.left = x + 'px';
-        }
-    } else if (evt.keyCode === 38) {
-        // move up using UP ARROW KEY
-        if (y > 0) {
-            y -= puckSpeed; // subtracts speed from the Y position
-            console.log(y);
-            puck.style.top = y + 'px';
-        }
-    } else if (evt.keyCode === 39) {
-        // move to the RIGHT!  Yoooooo
-        if (x < 250) {
-            x += stickSpeed;   // ADDS speed to the X position
-            console.log(x);
-            stick.style.left = x + 'px';
-        }
-    } else if (evt.keyCode === 40) {
-        // move the stick DOWN baybay!
-        if (y > 250) {
-            y += stickSpeed;
-            console.log(y);
-            stick.style.top = y + 'px';
-        }
+
+
+function createPuck() {
+    puckSpeed = 1; // sets initial speed
+    if(Math.round(Math.random()) == 1) {  // if a rounded random integer is provided
+        puckXDirection = 1; // move in a random direction
     }
-})
+    else {
+        puckXDirection = -1; // OR the opposite direction
+    }
+    if(Math.round(Math.random()) ==1) {
+        puckYDirection = math.random() *1; // adds random directions
+    }
+    else {
+        puckYDirection = math.random() * 1;
+    }
+    puckX = iceWidth / 2;
+    puckY = iceHeight / 2;
+}
 
 
 
@@ -151,10 +137,10 @@ document.addEventListener('init', (evt) => {
 
 
 // Next, we add an Event Listener to activate our FACE OFF feature
-faceOffBtn.addEventListener('click', init)
+// faceOffBtn.addEventListener('click', init)
 
 // // Then we add an Event Listener to activate our PLAY AGAIN BUTTON
-playAgainBtn.addEventListener('click', init);
+// playAgainBtn.addEventListener('click', init);
 
 
 
@@ -166,27 +152,22 @@ playAgainBtn.addEventListener('click', init);
 
 
 // // FIRST AND FOREMOST WE INITIALIZE OUR OBJECTS //
-init ();
-// Initialize all STATE then call render();
-function init () {
-    score = {
-        p: 0,
-        c: 0,
-    }
-    results = {
-        p: 'null',
-        c: 'null'
-    }
-    winner = null;
-    render();
-}
+// init ();
+// // Initialize all STATE then call render();
+// function init () {
+//     score = {
+//         p: 0,
+//         c: 0,
+//     }
+//     results = {
+//         p: 'null',
+//         c: 'null'
+//     }
+//     winner = null;
+//     render();
+// }
 
 // GET THE PUCK TO BOUNCE AROUND PONG STYLE //
-
-
-
-
-
 
 
 
@@ -202,42 +183,23 @@ function init () {
     
     // }
     
-    // // // NOW we have to program the STICKS to be able to SHOOT the PUCK //
-    
-    // // function shootTheJ() {
-        
-        // // // call RENDER //
-        // // render();
-        // // }
-        
-        // /////////////
-        
-        // // Now we write out a function to RENDER the SCOREBOARD
-        // function renderScores() {
-            //     //use a for loop to iterate//
-            //     for (let key in score) {
-                //         const scoreElement = document.getElementById(`${key}-score`);
-                //         scoreElement.innerText = score[key];
-                //     }
-// }
 
-// function renderResults () {
+ // NOW we have to program the STICKS to be able to DETECT CONTACT with the PUCK
+        
 
-// }
 
-// ///////////////
 
 // // FINALLY //
 // // ^^^ *SECOND* we invoke what we RENDER in the RENDER FUNCTION 
 // // *FIRST* we need our RENDER FUNCTION to give a HUB to all RENDERING //
 
-function render() {
-    renderCountdown(function() {
-        renderScore();
-        renderResult();
-        renderMessage();
-    })
-}
+// function render() {
+//     renderCountdown(function() {
+//         renderScore();
+//         renderResult();
+//         renderMessage();
+//     })
+// }
 
 // ////// WINNING MESSAGE & LEAD MESSAGE //////
 function renderMessage() {
@@ -261,21 +223,21 @@ function renderMessage() {
     }
 }
 
-function renderCountdown(cb) {
-    let count = 120;
-    countdownEl.style.visibility = 'visible';
-    countdownEl.innerText = count;
-    // write an ITERABLE to parse the Countdown Sequence //
-    const timerID = setInterval(function () {
-        count --;
-        if (count) {
-            countdownEl.innerText = count;
-        } else {
-            clearInterval(timerID);
-            countdownEl.style.visibility = 'visible';
-            cb();
-        }
-    }, 1000);
-}
+// function renderCountdown(cb) {
+//     let count = 120;
+//     countdownEl.style.visibility = 'visible';
+//     countdownEl.innerText = count;
+//     // write an ITERABLE to parse the Countdown Sequence //
+//     const timerID = setInterval(function () {
+//         count --;
+//         if (count) {
+//             countdownEl.innerText = count;
+//         } else {
+//             clearInterval(timerID);
+//             countdownEl.style.visibility = 'visible';
+//             cb();
+//         }
+//     }, 1000);
+// }
 
-playAgainBtn.disabled = !winner;
+// playAgainBtn.disabled = !winner;
