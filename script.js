@@ -25,18 +25,15 @@ const iceHeight = ice.height;
 // ////////////////////////////////////////////////
 // /*----- app's STATE (Variables) aka lets -----*/
 
- let x = 0;
- let y = 0;
- let stickSpeed = 25;
+let x = 0;
+let y = 0;
+let stickSpeed = 25;
 
 
 // The Puck Object
 
-let puckX = iceWidth / 2;
-let puckY = iceHeight / 2;
-let puckXDirection = 0
-let puckYDirection = 0
-let puckSpeed = 17.3
+
+
 
 // The Interval (for Motion)
 
@@ -109,7 +106,7 @@ document.addEventListener('keydown', (evt) => {
     }
 })
 
-// NOW we need to make PLAYER 2's JOYSTICK move USING ARROW KEYS
+// NOW we need to make PLAYER 2's JOYSTICK move USING ARROW KEYS (Left, Up, Right, Down)
 
 // *** PLAYER TWO CONTROLS
 
@@ -146,6 +143,9 @@ document.addEventListener('keydown', (evt) => {
 })
 
 
+/////////////////////////////
+
+
 // Next, we add an Event Listener to activate our FACE OFF feature
 // faceOffBtn.addEventListener('click', init)
 
@@ -163,7 +163,8 @@ document.addEventListener('keydown', (evt) => {
 
 // // FIRST AND FOREMOST WE INITIALIZE OUR OBJECTS //
 
-// init ();
+
+init ();
 // // Initialize all STATE then call render();
 function init () {
     score = {
@@ -193,40 +194,11 @@ function nextTick () {
 }
 
 
-// GET THE PUCK TO BOUNCE AROUND PONG STYLE //
-
-function movePuck () {
-    if (x > 0) {
-        x -= puckSpeed;  // subtracts the speed from the X position
-        console.log(x);
-        puck.style.left = x + 'px'; // by 1 px
-    }   
-        else if (y > 0) {
-        y -= puckSpeed;  // subtracts the speed from the X position
-        console.log(x);
-       puck.style.top = y + 'px'; // by increment of 1 pixel
-    }   
-        else if (x < 500) {
-        x += puckSpeed; // adds speed from the x position
-        console.log(x);
-        puck.style.right = x + 'px';
-        }
-        else if (y > 250) {
-            y += puckSpeed; // adds speed from the Y position
-            console.log(y);
-            puck.style.bottom = y + 'px';
-        }
-}
 
 
-// /// RENDER THE BOARD aka the ICE RINK!  /////
-// // in class we used forEach callback functions and literals too. 
-// function renderBoard () {
-    
-    // }
-    
 
- // NOW we have to program the STICKS to be able to DETECT CONTACT with the PUCK
+
+ // NOW we DETECT COLLISION with the PUCK
         
 
 
