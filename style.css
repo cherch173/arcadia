@@ -91,8 +91,8 @@ h3 {
 
 #ice {
     display: grid;
-    grid-template-columns: repeat(11, 8vmin);
-    grid-template-rows: repeat(3, 20vmin);
+    grid-template-columns: repeat(9, 12vmin);
+    grid-template-rows: repeat(5, 12vmin);
     gap: 1vmin;
     justify-content: center;
     align-items: center;
@@ -113,9 +113,9 @@ h3 {
     background-color: crimson;
     border-radius: 50%;
     border: .25vmin solid rgba(178, 34, 34, .86);
-    position:relative;
-    top: 0;
-    left: 0;
+    position:absolute;
+    top: 35vmin;
+    left: 50vmin;
 }
 
 #stickTwo {
@@ -125,9 +125,9 @@ h3 {
     background-color: dodgerblue;
     border-radius: 50%;
     border: .25vmin solid rgba(0,0,173, 0.86);
-    position: relative;
-    top: 0;
-    right: 0;
+    position: absolute;
+    top: 75vmin;
+    right: 50vmin;
 }
 
 /* The Puck  */
@@ -140,9 +140,7 @@ h3 {
     border: 6px solid black;
     border-radius: 50%;
     background-color: black;
-    position: relative;
-    top: 0;
-    left: 0;
+    position: absolute;
 }
 
 /* A PLAY AGAIN BUTTON  */

@@ -159,33 +159,6 @@ document.addEventListener('keydown', (evt) => {
     }
 })
 
-document.addEventListener('keydown', (evt) => {
-    if (evt.Code === 32) {
-        if (x > 500) {
-            x -= puckSpeed;  // subtracts the speed from the X position
-            console.log(x);
-            puck.style.left = x + 'px';
-        }
-    } 
-        // move up 
-        else if (y >= -25) {
-            y -= puckSpeed; // subtracts speed from the Y position
-            console.log(y);
-            puck.style.top = y + 'px';
-        }
-        // move right
-        else if (x < 0) {
-            x += puckSpeed; // add speed form the X position
-            console.log(x);
-            puck.style.right = x + 'px';
-        }
-        // move down
-        else () => {
-            y += puckSpeed;
-            console.log(y);
-            puck.style.bottom = y + 'px';
-        }
-    })
 
 // Next, we add an Event Listener to activate our FACE OFF feature
 // faceOffBtn.addEventListener('click', init)
