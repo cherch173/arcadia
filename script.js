@@ -12,9 +12,10 @@ const stickTwo = document.querySelector('#stickTwo');
 // The PUCK //
 
 const puck = document.getElementById('puck');
+const puckRadius = 75;
 
 // The ICE //
-const ice = document.querySelector('#ice');
+const ice = document.getElementById('ice');
 const iceWidth = ice.width;
 const iceHeight = ice.height;
 
@@ -32,7 +33,13 @@ let stickSpeed = 25;
 
 // The Puck Object
 
+let puckSpeed;
 
+let puckX = iceWidth / 2
+let puckY = iceHeight / 2
+
+let puckXDirection = 0
+let puckYDirection = 0
 
 
 // The Interval (for Motion)
@@ -142,9 +149,8 @@ document.addEventListener('keydown', (evt) => {
     }
 })
 
-
 /////////////////////////////
-
+ // BUTTONS //
 
 // Next, we add an Event Listener to activate our FACE OFF feature
 // faceOffBtn.addEventListener('click', init)
@@ -154,15 +160,11 @@ document.addEventListener('keydown', (evt) => {
 
 
 
-
-
-
 // /////////////////////////
 // /*----- FUNCTIONS -----*/
 
 
 // // FIRST AND FOREMOST WE INITIALIZE OUR OBJECTS //
-
 
 init ();
 // // Initialize all STATE then call render();
@@ -189,17 +191,26 @@ let movePuck = function() {
     console.log(puck.getBoundingClientRect())
     let yDIR = 'down'
     let xDIR = 'right'
-    if (puck.style.top >= 475) {
+    if (puck.style.top > iceHeight) {
         puck.style.top = `${puck.getBoundingClientRect().top -= 5}px`
     }
-    if (puck.style.left > 975) {
-        puck.style.left = `${puck.getBoundingClientRect().top -= 5}px`
+    if (puck.style.left > iceWidth) {
+        puck.style.left = `${puck.getBoundingClientRect().left -= 5}px`
+    }
+    if (puck.style.top < iceHeight) {
+        puck.style.top = `${puck.getBoundingClientRect().top += 5}px`
+    }
+    if (puck.style.left < iceWidth) {
+        puck.style.left = `${puck.getBoundingClientRect().left += 5}px`
+    }
+    else {
+
     }
     puck.style.top = `${puck.getBoundingClientRect().top += 5}px`
     puck.style.left = `${puck.getBoundingClientRect().left += 5}px`
 }
 
-setInterval(movePuck, 1000)
+setInterval(movePuck, 100)
 
 // Now... CREATE the essence of MOTION ITSELF to (eventually) APPLY to THE PUCK ELEMENT //
 // function nextTick () {
