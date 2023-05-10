@@ -18,6 +18,10 @@ const ice = document.querySelector('#ice');
 const iceWidth = ice.width;
 const iceHeight = ice.height;
 
+
+
+
+
 // ////////////////////////////////////////////////
 // /*----- app's STATE (Variables) aka lets -----*/
 
@@ -83,7 +87,10 @@ const faceOffBtn = document.querySelector('faceOffBtn')
 // ///////////////////////////////
 // /*----- EVENT LISTENERS -----*/
 
+
 // FIRST and FOREMOST we'll add an EVENT LISTENER to make the JOYSTICK move USING ARROW KEYS
+
+// ** PLAYER ONE CONTROLS ** //
 document.addEventListener('keydown', (evt) => {
     if (evt.keyCode === 65) {
         // move stick to the LEFT using LEFT ARROW KEY
@@ -102,14 +109,14 @@ document.addEventListener('keydown', (evt) => {
     } else if (evt.keyCode === 83) {
         // move to the RIGHT!  Yoooooo
         if (x < 225) {
-            x += puckSpeed;   // ADDS speed to the X position
+            x += stickSpeed;   // ADDS speed to the X position
             console.log(x);
             stickOne.style.left = x + 'px';
         }
     } else if (evt.keyCode === 90) {
         // move the stick DOWN baybay!
         if (y < 250) {
-            y += puckSpeed;
+            y += stickSpeed;
             console.log(y);
             stickOne.style.top = y + 'px';
         }
@@ -152,7 +159,33 @@ document.addEventListener('keydown', (evt) => {
     }
 })
 
-
+document.addEventListener('keydown', (evt) => {
+    if (evt.Code === 32) {
+        if (x > 500) {
+            x -= puckSpeed;  // subtracts the speed from the X position
+            console.log(x);
+            puck.style.left = x + 'px';
+        }
+    } 
+        // move up 
+        else if (y >= -25) {
+            y -= puckSpeed; // subtracts speed from the Y position
+            console.log(y);
+            puck.style.top = y + 'px';
+        }
+        // move right
+        else if (x < 0) {
+            x += puckSpeed; // add speed form the X position
+            console.log(x);
+            puck.style.right = x + 'px';
+        }
+        // move down
+        else () => {
+            y += puckSpeed;
+            console.log(y);
+            puck.style.bottom = y + 'px';
+        }
+    })
 
 // Next, we add an Event Listener to activate our FACE OFF feature
 // faceOffBtn.addEventListener('click', init)
