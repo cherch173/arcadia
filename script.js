@@ -186,19 +186,20 @@ function gameStart() {
 // MOVE THE PUCK SON. USE A FUNC-SHUN //
 
 let movePuck = function() {
+    console.log(puck.getBoundingClientRect())
     let yDIR = 'down'
     let xDIR = 'right'
     if (puck.style.top >= 475) {
         puck.style.top = `${puck.getBoundingClientRect().top -= 5}px`
     }
     if (puck.style.left > 975) {
-        puck.style.left = `${getBoundingClientRect().top -= 5}px`
+        puck.style.left = `${puck.getBoundingClientRect().top -= 5}px`
     }
     puck.style.top = `${puck.getBoundingClientRect().top += 5}px`
     puck.style.left = `${puck.getBoundingClientRect().left += 5}px`
 }
 
-setInterval(movePuck, 500)
+setInterval(movePuck, 1000)
 
 // Now... CREATE the essence of MOTION ITSELF to (eventually) APPLY to THE PUCK ELEMENT //
 // function nextTick () {
