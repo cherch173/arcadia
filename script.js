@@ -60,17 +60,13 @@ let player2Score = 0
 const faceOffBtn = document.querySelector('faceOffBtn')
 
 // // Next, we'll select H3 to be the theatre that displays a message delcaring WHO THE WINNER is //
-// const message = document.querySelector('h3')
+const message = document.querySelector('h3')
 
 // // Then we'll declare our PLAY AGAIN button at the bottom
-// const playAgainBtn = document.querySelector('playAgainButton')
+const playAgainBtn = document.querySelector('playAgainButton')
 
 // // Then we'll cache our COUNTDOWN Clock
 // let countdownEl = document.getElementById('countdown')
-
-// Calculating Score Tally
-
-
 
 
 
