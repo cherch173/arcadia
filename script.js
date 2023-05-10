@@ -11,7 +11,7 @@ const stickTwo = document.querySelector('#stickTwo');
 
 // The PUCK //
 
-const puck = document.getElementById('#puck');
+const puck = document.getElementById('puck');
 
 // The ICE //
 const ice = document.querySelector('#ice');
@@ -176,23 +176,38 @@ function init () {
         c: 'null'
     }
     winner = null;
-    render();
+    // render();
 }
 
 // NOW start the game //
 function gameStart() {
     nextTick();
 }
+// MOVE THE PUCK SON. USE A FUNC-SHUN //
 
-// Now... CREATE the essence of MOTION ITSELF to (eventually) APPLY to THE PUCK ELEMENT //
-function nextTick () {
-    interval = setInterval(() => {
-        movePuck();
-        checkCollision();
-        nextTick()
-    }, 100);
+let movePuck = function() {
+    let yDIR = 'down'
+    let xDIR = 'right'
+    if (puck.style.top >= 750) {
+        puck.style.top = `${puck.getBoundingClientRect().top -= 5}px`
+    }
+    if (puck.style.left > 1000) {
+        puck.style.left = `${getBoundingClientRect().top -= 5}px`
+    }
+    puck.style.top = `${puck.getBoundingClientRect().top += 5}px`
+    puck.style.left = `${puck.getBoundingClientRect().left += 5}px`
 }
 
+setInterval(movePuck, 100)
+
+// Now... CREATE the essence of MOTION ITSELF to (eventually) APPLY to THE PUCK ELEMENT //
+// function nextTick () {
+//     interval = setInterval(() => {
+//         movePuck();
+//         checkCollision();
+//         nextTick()
+//     }, 100);
+// }
 
 
 

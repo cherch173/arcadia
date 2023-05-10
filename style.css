@@ -140,6 +140,7 @@ h3 {
     border-radius: 50%;
     background-color: darkslategrey;
     position: absolute;
+    top: 
     left: 600px;
 }
 
@@ -167,10 +168,10 @@ h3 {
 
 /* //// MEDIA QUERY FOR TABLET //// */
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
     * {
         color: rgba(194, 29, 62, 0.86);
         text-shadow: -1px 1px rgba(245, 245, 245, 1), -2px 2px black;
         font-size: 20px;
     }
-}
+} */
