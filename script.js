@@ -3,7 +3,7 @@
 
 // //////////////////////////
 // /*----- CONSTANTS -----*/
-const board = document.getElementById('#board')
+const board = document.getElementById('board')
 
 // The JOYSTICKS //
 const stickOne = document.querySelector('#stickOne');
@@ -12,12 +12,13 @@ const stickTwo = document.querySelector('#stickTwo');
 // The PUCK //
 
 const puck = document.getElementById('puck');
-const puckRadius = 75;
+const rect = puck.getBoundingClientRect();
 
 // The ICE //
 const ice = document.getElementById('ice');
-const iceWidth = ice.width;
-const iceHeight = ice.height;
+const iceWidth = 75
+const iceHeight = 75
+console.log(iceHeight, iceWidth)
 
 
 
@@ -149,6 +150,10 @@ document.addEventListener('keydown', (evt) => {
     }
 })
 
+//////
+
+// add an EVENT LISTENER for PUCK touching ICE RINK BORDER //
+
 /////////////////////////////
  // BUTTONS //
 
@@ -187,30 +192,39 @@ function gameStart() {
 }
 // MOVE THE PUCK SON. USE A FUNC-SHUN //
 
+console.log(rect)
+console.log(puck.getBoundingClientRect().top)
+
+
 let movePuck = function() {
-    console.log(puck.getBoundingClientRect())
     let yDIR = 'down'
     let xDIR = 'right'
-    if (puck.style.top > iceHeight) {
-        puck.style.top = `${puck.getBoundingClientRect().top -= 5}px`
+    if (puck.getBoundingClientRect().top > iceHeight) {
+        puck.getBoundingClientRect().top = `${puck.getBoundingClientRect().top - 5}px`
     }
-    if (puck.style.left > iceWidth) {
-        puck.style.left = `${puck.getBoundingClientRect().left -= 5}px`
+    if (puck.getBoundingClientRect().left > iceWidth) {
+        puck.getBoundingClientRect().left = `${puck.getBoundingClientRect().left - 5}px`
     }
-    if (puck.style.top < iceHeight) {
-        puck.style.top = `${puck.getBoundingClientRect().top += 5}px`
+    if (puck.getBoundingClientRect().top < iceHeight) {
+        puck.getBoundingClientRect().top = `${puck.getBoundingClientRect().top + 5}px`
     }
-    if (puck.style.left < iceWidth) {
-        puck.style.left = `${puck.getBoundingClientRect().left += 5}px`
+    if (puck.getBoundingClientRect().left < iceWidth) {
+        puck.getBoundingClientRect().left = `${puck.getBoundingClientRect().left + 5}px`
     }
     else {
 
     }
-    puck.style.top = `${puck.getBoundingClientRect().top += 5}px`
-    puck.style.left = `${puck.getBoundingClientRect().left += 5}px`
+    // if (puckX > 0) {
+    //     puckX -= puckSpeed;
+    //     console.log(puckX)
+    //     puck.style.left = puckX + 'px;'
+    // }
+
+    puck.style.top = `${puck.getBoundingClientRect().top + 5}px`
+    puck.style.left = `${puck.getBoundingClientRect().left + 5}px`
 }
 
-setInterval(movePuck, 100)
+setInterval(movePuck, 250)
 
 // Now... CREATE the essence of MOTION ITSELF to (eventually) APPLY to THE PUCK ELEMENT //
 // function nextTick () {
