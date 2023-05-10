@@ -120,7 +120,7 @@ document.addEventListener('keydown', (evt) => {
         }
     } else if (evt.keyCode === 38) {
         // move up using UP ARROW KEY
-        if (y > 275) {
+        if (y > 25) {
             y -= stickSpeed; // subtracts speed from the Y position
             console.log(y);
             stickTwo.style.top = y + 'px';
