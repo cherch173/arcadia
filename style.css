@@ -113,9 +113,10 @@ h3 {
     background-color: crimson;
     border-radius: 50%;
     border: .25vmin solid rgba(178, 34, 34, .86);
-    position:absolute;
-    top: 35vmin;
-    left: 50vmin;
+    position: relative;
+    flex-direction: row;
+    top: 13vmin;
+    left: 10vmin;
 }
 
 #stickTwo {
@@ -125,12 +126,11 @@ h3 {
     background-color: dodgerblue;
     border-radius: 50%;
     border: .25vmin solid rgba(0,0,173, 0.86);
-    position: absolute;
-    top: 75vmin;
-    right: 50vmin;
+    position: relative;
+    flex-direction: row;
+    top: 37vmin;
+    right: -96vmin;
 }
-
-/* The Puck  */
 
 #puck {
     display: flex;
