@@ -91,14 +91,14 @@ document.addEventListener('keydown', (evt) => {
         }
     } else if (evt.keyCode === 83) {
         // move to the RIGHT!  Yoooooo
-        if (x < 425) {
+        if (x < 400) {
             x += stickSpeed;   // ADDS speed to the X position
             console.log(x);
             stickOne.style.left = x + 'px';
         }
     } else if (evt.keyCode === 90) {
         // move the stick DOWN baybay!
-        if (y < 250) {
+        if (y < 425) {
             y += stickSpeed;
             console.log(y);
             stickOne.style.top = y + 'px';
@@ -120,7 +120,7 @@ document.addEventListener('keydown', (evt) => {
         }
     } else if (evt.keyCode === 38) {
         // move up using UP ARROW KEY
-        if (y > 25) {
+        if (y > 300) {
             y -= stickSpeed; // subtracts speed from the Y position
             console.log(y);
             stickTwo.style.top = y + 'px';
@@ -134,7 +134,7 @@ document.addEventListener('keydown', (evt) => {
         }
     } else if (evt.keyCode === 40) {
         // move the stick DOWN baybay!
-        if (y < 750) {
+        if (y < 675) {
             y += stickSpeed;
             console.log(y);
             stickTwo.style.top = y + 'px';
