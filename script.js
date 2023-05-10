@@ -25,16 +25,6 @@ const iceHeight = ice.height;
 // ////////////////////////////////////////////////
 // /*----- app's STATE (Variables) aka lets -----*/
 
-// // First, we begin with the scoring logic using a let SCORES OBJECT to store our game's SCORE //
-// // The OBJECT KEY of 'p' will be PLAYER, 'c' will be COMPUTER, 't' will be tie
-
-// // Then we'll declare a let RESULTS OBJECT to store the OUTCOMES //
-// // The OBJECT KEY of 'p' will be PLAYER, 'c' will be COMPUTER, 't' will be tie
-// // The OBJECT VALUES of 'L' will equal LETTERKENNY and and 'Z' for THREE RIVERS LAKERS
-
-// // Then we declare a let WINNER STRING of 'p' if PLAYER wins, 'c' if COMPUTER wins and 't' if its a TIE
-
-
  let x = 0;
  let y = 0;
  let stickSpeed = 25;
