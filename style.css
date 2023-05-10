@@ -126,10 +126,10 @@ h3 {
     background-color: dodgerblue;
     border-radius: 50%;
     border: .25vmin solid rgba(0,0,173, 0.86);
-    position: relative;
+    position: absolute;
     flex-direction: row;
-    top: 37vmin;
-    right: -96vmin;
+    top: 73vmin;
+    right: 25vmin;
 }
 
 #puck {

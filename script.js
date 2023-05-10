@@ -88,7 +88,7 @@ const faceOffBtn = document.querySelector('faceOffBtn')
 // /*----- EVENT LISTENERS -----*/
 
 
-// FIRST and FOREMOST we'll add an EVENT LISTENER to make the JOYSTICK move USING ARROW KEYS
+// FIRST and FOREMOST we'll add an EVENT LISTENER to make the JOYSTICK move using W(up) Z(down) A(left) S(right)
 
 // ** PLAYER ONE CONTROLS ** //
 document.addEventListener('keydown', (evt) => {
@@ -130,28 +130,28 @@ document.addEventListener('keydown', (evt) => {
 document.addEventListener('keydown', (evt) => {
     if (evt.keyCode === 37) {
         // move stick to the LEFT using LEFT ARROW KEY
-        if (x > 500) {
+        if (x > 725) {
             x -= stickSpeed;  // subtracts the speed from the X position
             console.log(x);
             stickTwo.style.left = x + 'px';
         }
     } else if (evt.keyCode === 38) {
         // move up using UP ARROW KEY
-        if (y > -25) {
+        if (y > 275) {
             y -= stickSpeed; // subtracts speed from the Y position
             console.log(y);
             stickTwo.style.top = y + 'px';
         }
     } else if (evt.keyCode === 39) {
         // move to the RIGHT!  Yoooooo
-        if (x < 900) {
+        if (x < 1173) {
             x += stickSpeed;   // ADDS speed to the X position
             console.log(x);
             stickTwo.style.left = x + 'px';
         }
     } else if (evt.keyCode === 40) {
         // move the stick DOWN baybay!
-        if (y < 450) {
+        if (y < 750) {
             y += stickSpeed;
             console.log(y);
             stickTwo.style.top = y + 'px';
