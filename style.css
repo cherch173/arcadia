@@ -113,10 +113,10 @@ h3 {
     background-color: crimson;
     border-radius: 50%;
     border: .25vmin solid rgba(86, 11, 11, 0.86);
-    position: absolute;
+    position: relative;
     flex-direction: row;
-    top: 225px;
-    left: 200px;
+    top: 175px;
+    left: 75px;
 }
 
 #stickTwo {
@@ -128,8 +128,8 @@ h3 {
     border: .25vmin solid rgba(0,0,173, 0.86);
     position: absolute;
     flex-direction: row;
-    top: 525px;
-    right: 200px;
+    top: 350px;
+    left: 800px;
 }
 
 #puck {
@@ -138,10 +138,9 @@ h3 {
     width: 75px;
     border: 2px solid black;
     border-radius: 50%;
-    background-color: darkslategrey;
+    background-color: rgba(127, 255, 0, .86);
     position: absolute;
-    top: 
-    left: 600px;
+    left: 450px;
 }
 
 /* A PLAY AGAIN BUTTON  */

@@ -188,17 +188,17 @@ function gameStart() {
 let movePuck = function() {
     let yDIR = 'down'
     let xDIR = 'right'
-    if (puck.style.top >= 750) {
+    if (puck.style.top >= 500) {
         puck.style.top = `${puck.getBoundingClientRect().top -= 5}px`
     }
-    if (puck.style.left > 1000) {
+    if (puck.style.left > 900) {
         puck.style.left = `${getBoundingClientRect().top -= 5}px`
     }
     puck.style.top = `${puck.getBoundingClientRect().top += 5}px`
     puck.style.left = `${puck.getBoundingClientRect().left += 5}px`
 }
 
-setInterval(movePuck, 100)
+setInterval(movePuck, 500)
 
 // Now... CREATE the essence of MOTION ITSELF to (eventually) APPLY to THE PUCK ELEMENT //
 // function nextTick () {
