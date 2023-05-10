@@ -77,28 +77,28 @@ const playAgainBtn = document.querySelector('playAgainButton')
 document.addEventListener('keydown', (evt) => {
     if (evt.keyCode === 65) {
         // move stick to the LEFT using LEFT ARROW KEY
-        if (x > 200) {
+        if (x > 10) {
             x -= stickSpeed;  // subtracts the speed from the X position
             console.log(x);
             stickOne.style.left = x + 'px';
         }
     } else if (evt.keyCode === 87) {
         // move up using UP ARROW KEY
-        if (y > 275) {
+        if (y > 25) {
             y -= stickSpeed; // subtracts speed from the Y position
             console.log(y);
             stickOne.style.top = y + 'px';
         }
     } else if (evt.keyCode === 83) {
         // move to the RIGHT!  Yoooooo
-        if (x < 666) {
+        if (x < 425) {
             x += stickSpeed;   // ADDS speed to the X position
             console.log(x);
             stickOne.style.left = x + 'px';
         }
     } else if (evt.keyCode === 90) {
         // move the stick DOWN baybay!
-        if (y < 750) {
+        if (y < 250) {
             y += stickSpeed;
             console.log(y);
             stickOne.style.top = y + 'px';
