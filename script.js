@@ -36,8 +36,8 @@ let stickSpeed = 25;
 
 let puckSpeed;
 
-let puckX = iceWidth / 2
-let puckY = iceHeight / 2
+let puckX = 200
+let puckY = 300
 
 let puckXDirection = 0
 let puckYDirection = 0
@@ -199,8 +199,8 @@ console.log(puck.getBoundingClientRect().top)
 let movePuck = function() {
     let yDIR = 'down'
     let xDIR = 'right'
-    if (puck.getBoundingClientRect().top > iceHeight) {
-        puck.getBoundingClientRect().top = `${puck.getBoundingClientRect().top - 5}px`
+    if (puckY * 0.17 >= iceHeight) {
+        console.log('hitBorder') // puck = `${puck.getBoundingClientRect().top - 5}px`
     }
     if (puck.getBoundingClientRect().left > iceWidth) {
         puck.getBoundingClientRect().left = `${puck.getBoundingClientRect().left - 5}px`
