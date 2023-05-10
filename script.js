@@ -94,28 +94,28 @@ const faceOffBtn = document.querySelector('faceOffBtn')
 document.addEventListener('keydown', (evt) => {
     if (evt.keyCode === 65) {
         // move stick to the LEFT using LEFT ARROW KEY
-        if (x > 10) {
+        if (x > 200) {
             x -= stickSpeed;  // subtracts the speed from the X position
             console.log(x);
             stickOne.style.left = x + 'px';
         }
     } else if (evt.keyCode === 87) {
         // move up using UP ARROW KEY
-        if (y > -10) {
+        if (y > 275) {
             y -= stickSpeed; // subtracts speed from the Y position
             console.log(y);
             stickOne.style.top = y + 'px';
         }
     } else if (evt.keyCode === 83) {
         // move to the RIGHT!  Yoooooo
-        if (x < 225) {
+        if (x < 666) {
             x += stickSpeed;   // ADDS speed to the X position
             console.log(x);
             stickOne.style.left = x + 'px';
         }
     } else if (evt.keyCode === 90) {
         // move the stick DOWN baybay!
-        if (y < 250) {
+        if (y < 750) {
             y += stickSpeed;
             console.log(y);
             stickOne.style.top = y + 'px';
@@ -130,28 +130,28 @@ document.addEventListener('keydown', (evt) => {
 document.addEventListener('keydown', (evt) => {
     if (evt.keyCode === 37) {
         // move stick to the LEFT using LEFT ARROW KEY
-        if (x > 250) {
+        if (x > 500) {
             x -= stickSpeed;  // subtracts the speed from the X position
             console.log(x);
             stickTwo.style.left = x + 'px';
         }
     } else if (evt.keyCode === 38) {
         // move up using UP ARROW KEY
-        if (y >= -25) {
+        if (y > -25) {
             y -= stickSpeed; // subtracts speed from the Y position
             console.log(y);
             stickTwo.style.top = y + 'px';
         }
     } else if (evt.keyCode === 39) {
         // move to the RIGHT!  Yoooooo
-        if (x < 450) {
+        if (x < 900) {
             x += stickSpeed;   // ADDS speed to the X position
             console.log(x);
             stickTwo.style.left = x + 'px';
         }
     } else if (evt.keyCode === 40) {
         // move the stick DOWN baybay!
-        if (y < 200) {
+        if (y < 450) {
             y += stickSpeed;
             console.log(y);
             stickTwo.style.top = y + 'px';

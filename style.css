@@ -98,7 +98,7 @@ h3 {
     align-items: center;
     margin: 20px 20px 20px 20px;
     border-radius: 17.3%;
-    border: 10px double rgba(147, 51, 68, 0.86);
+    border: 30px double rgba(147, 51, 68, 0.86);
     background-color: rgba(246, 247, 255, .86);
 }
 
@@ -112,11 +112,11 @@ h3 {
     width: 15vmin;
     background-color: crimson;
     border-radius: 50%;
-    border: .25vmin solid rgba(178, 34, 34, .86);
-    position: relative;
+    border: .25vmin solid rgba(86, 11, 11, 0.86);
+    position: absolute;
     flex-direction: row;
-    top: 13vmin;
-    left: 10vmin;
+    top: 35vmin;
+    left: 27vmin;
 }
 
 #stickTwo {
@@ -140,7 +140,7 @@ h3 {
     border-radius: 50%;
     background-color: black;
     position: absolute;
-    left: 100vmin;
+    left: 75vmin;
 }
 
 /* A PLAY AGAIN BUTTON  */
