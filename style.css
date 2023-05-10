@@ -91,9 +91,9 @@ h3 {
 
 #ice {
     display: grid;
-    grid-template-columns: repeat(9, 12vmin);
-    grid-template-rows: repeat(5, 12vmin);
-    gap: 1vmin;
+    grid-template-columns: repeat(9, 100px);
+    grid-template-rows: repeat(5, 100px);
+    gap: 10px;
     justify-content: center;
     align-items: center;
     margin: 20px 20px 20px 20px;
@@ -107,40 +107,40 @@ h3 {
 }
 
 #stickOne {
-    display: flex;
-    height: 15vmin;
-    width: 15vmin;
+    display: grid;
+    height: 150px;
+    width: 150px;
     background-color: crimson;
     border-radius: 50%;
     border: .25vmin solid rgba(86, 11, 11, 0.86);
     position: absolute;
     flex-direction: row;
-    top: 35vmin;
-    left: 27vmin;
+    top: 225px;
+    left: 200px;
 }
 
 #stickTwo {
     display: flex;
-    height: 15vmin;
-    width: 15vmin;
+    height: 150px;
+    width: 150px;
     background-color: dodgerblue;
     border-radius: 50%;
     border: .25vmin solid rgba(0,0,173, 0.86);
     position: absolute;
     flex-direction: row;
-    top: 73vmin;
-    right: 25vmin;
+    top: 525px;
+    right: 200px;
 }
 
 #puck {
     display: flex;
-    height: 8vmin;
-    width: 8vmin;
+    height: 75px;
+    width: 75px;
     border: 6px solid black;
     border-radius: 50%;
     background-color: black;
     position: absolute;
-    left: 75vmin;
+    left: 600px;
 }
 
 /* A PLAY AGAIN BUTTON  */
