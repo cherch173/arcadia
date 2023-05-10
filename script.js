@@ -113,7 +113,7 @@ document.addEventListener('keydown', (evt) => {
 document.addEventListener('keydown', (evt) => {
     if (evt.keyCode === 37) {
         // move stick to the LEFT using LEFT ARROW KEY
-        if (x > 725) {
+        if (x > 575) {
             x -= stickSpeed;  // subtracts the speed from the X position
             console.log(x);
             stickTwo.style.left = x + 'px';
@@ -127,7 +127,7 @@ document.addEventListener('keydown', (evt) => {
         }
     } else if (evt.keyCode === 39) {
         // move to the RIGHT!  Yoooooo
-        if (x < 1173) {
+        if (x < 950) {
             x += stickSpeed;   // ADDS speed to the X position
             console.log(x);
             stickTwo.style.left = x + 'px';
@@ -188,10 +188,10 @@ function gameStart() {
 let movePuck = function() {
     let yDIR = 'down'
     let xDIR = 'right'
-    if (puck.style.top >= 500) {
+    if (puck.style.top >= 475) {
         puck.style.top = `${puck.getBoundingClientRect().top -= 5}px`
     }
-    if (puck.style.left > 900) {
+    if (puck.style.left > 975) {
         puck.style.left = `${getBoundingClientRect().top -= 5}px`
     }
     puck.style.top = `${puck.getBoundingClientRect().top += 5}px`
